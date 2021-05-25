@@ -1,11 +1,6 @@
 import sqlite3
 
 
-FLAGS = None
-_ = None
-
-
-
 def address_list(database):
     con = sqlite3.connect(database)
     cur = con.cursor()
@@ -37,7 +32,7 @@ def refresh_availability(database):
     for id in addr_invalid:
         availability = cur.execute('select availability from Addr_Valid where id = "%d"' %id[0]).fetchone()
         n = fibo.index(availability[0]) + 1
-        cur.execute('update Addr_Valid set availabiliy = "%d", Date = CURRENT_DATE where id = "%d"' %(n, id[0]))
+        cur.execute('update Addr_Valid set availability = "%d", Date = CURRENT_DATE where id = "%d"' %(n, id[0]))
 
     con.commit()
     con.close()

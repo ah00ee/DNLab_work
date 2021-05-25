@@ -2,6 +2,7 @@ import sqlite3
 import pickle
 from nltk.corpus import stopwords
 from nltk import WordNetLemmatizer, word_tokenize
+from html_file_maker import FLAGS
 import os
 import re
 
@@ -68,7 +69,7 @@ def get_category(database, path_dir):
             print(cnt)
 
         c = cur.execute('select id from CategoryID where category = "%s"'%(category)).fetchone()[0]
-        cur.execute('update AddrCategory set category = "%d" where addr = "%d"'%(c, f[:-5]))
+        cur.execute('update AddrCategory set category = "%d" where addr in (select id from AddrHash_ID where addr = "%s")'%(c, fpath[:-5]))
         print()
 
     con.commit()

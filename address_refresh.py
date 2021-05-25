@@ -4,8 +4,8 @@ import os
 import time
 
 from date_update import address_list, refresh_availability
-from html_file_maker import get_address, file_maker, hash_maker, get_args
 from category_maker import get_category
+from html_file_maker import get_address, file_maker, hash_maker, get_args
 
 
 FLAGS = None
@@ -25,6 +25,8 @@ def main():
 
     addresses = address_list(FLAGS.input)
 
+    get_args(FLAGS)
+
     # html 파일 생성
     print(f'Start html file making')
 
@@ -36,7 +38,7 @@ def main():
     time_end = time.time()
 
     print(f'End up after {time_end - time_start}')
-
+    
     # hash 생성 및 업데이트
     hash_maker(FLAGS.input, path_dir)
 
@@ -68,6 +70,5 @@ if __name__ == '__main__':
     # path preprocessing
     FLAGS.input = os.path.abspath(os.path.expanduser(FLAGS.input))
     FLAGS.output = os.path.abspath(os.path.expanduser(FLAGS.output))
-    get_args(FLAGS)
 
     main()
