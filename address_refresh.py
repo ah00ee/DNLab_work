@@ -17,7 +17,7 @@ def main():
     # output 및 html 폴더 생성
     os.makedirs(FLAGS.output, exist_ok=True)
     path_dir = os.path.join(FLAGS.output, 'html')
-'''
+    '''
     try:
         os.makedirs(path_dir, exist_ok=False)    
     except FileExistsError:
@@ -44,7 +44,7 @@ def main():
     
     # hash 생성 및 업데이트
     hash_maker(FLAGS.input, path_dir)
-'''
+    '''
 
     # 수집일 갱신
     refresh_availability(FLAGS.input)
