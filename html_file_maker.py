@@ -2,6 +2,7 @@ import requests
 import sqlite3
 import hashlib
 import os
+import time
 
 global FLAGS
 FLAGS = None
@@ -10,8 +11,6 @@ FLAGS = None
 def get_args(args):
     global FLAGS
     FLAGS = args
-
-    print(FLAGS)
 
 
 def get_address(rows):    
@@ -34,6 +33,7 @@ def file_maker(row):
         try:
             addr = 'http://' + row + '.onion'
             data = session.get(addr).text
+            #time.sleep(2)
         except requests.exceptions.ConnectionError:
             return {'Address': row, 'Result': 'Fail'}
 

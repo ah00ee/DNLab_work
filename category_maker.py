@@ -46,7 +46,7 @@ def get_category(database, path_dir):
     con = sqlite3.connect(database)
     cur = con.cursor()
 
-    d = dictionary('category_words.txt')
+    d = dictionary('./category_words.txt')
     for f in file_list:    
         fpath = os.path.join(path_dir, f)
         print(f)

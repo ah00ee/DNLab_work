@@ -13,10 +13,11 @@ _ = None
 
 
 def main():
+    
     # output 및 html 폴더 생성
     os.makedirs(FLAGS.output, exist_ok=True)
     path_dir = os.path.join(FLAGS.output, 'html')
-
+'''
     try:
         os.makedirs(path_dir, exist_ok=False)    
     except FileExistsError:
@@ -33,28 +34,29 @@ def main():
     time_start = time.time()
     with multiprocessing.Pool(FLAGS.number) as p:
         joined_rows = p.imap(file_maker, get_address(addresses))
+        
         for row in joined_rows:
             print(row)
+        
     time_end = time.time()
 
     print(f'End up after {time_end - time_start}')
     
     # hash 생성 및 업데이트
     hash_maker(FLAGS.input, path_dir)
+'''
 
     # 수집일 갱신
     refresh_availability(FLAGS.input)
-
     # 카테고리 생성
     get_category(FLAGS.input, path_dir)
-    
 
 if __name__ == '__main__':
     import argparse
 
     parser = argparse.ArgumentParser()
     
-    parser.add_argument('-i', '--input', type=str, required=True,
+    parser.add_argument('-i', '--input', type=str, required='True',
                         help='The addresses formed database for testing')
     parser.add_argument('-o', '--output', type=str,
                         default='./output',

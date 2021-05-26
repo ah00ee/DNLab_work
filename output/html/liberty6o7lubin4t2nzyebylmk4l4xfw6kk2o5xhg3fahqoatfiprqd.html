@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+	<link rel="stylesheet" href="/resources/style/style.css">
+	<title>Liberty Market</title>
+</head>
+<body><div class="mobile-header-cs d-lg-none ">
+		<header>
+	        <a href="/" class="brand"><img src="/resources/image/navbar.png" class="max-h-50px w-200px"></a>
+	        <nav class="menu">
+	            <label class="menu-icon-not">
+	            	<a class="btn btn-success" href="/register">Register</a>
+	            </label>
+	        </nav>
+	    </header>
+	</div>
+	
+    <div class="d-flex flex-column flex-root">
+		<div class="d-flex flex-row flex-column-fluid page">
+			<div class="d-flex flex-column flex-row-fluid wrapper">
+				<div class="header header-fixed">
+					<div class="container">
+						<div class="d-none d-lg-flex align-items-center flex-wrap w-250px">
+							<a href="/">
+								<img src="/resources/image/navbar.png" class="max-h-50px">
+							</a>
+						</div>
+							<div class="header-menu-wrapper header-menu-wrapper-left">
+								<div class="header-menu header-menu-left header-menu-mobile header-menu-layout-default">
+									<ul class="menu-nav">
+										<li class="menu-item menu-item-active">
+											<a href="/signin" class="menu-link">
+												<span class="menu-text">Sign In</span>
+											</a>
+										</li>
+										
+										<li class="menu-item ">
+											<a href="/register" class="menu-link">
+												<span class="menu-text">Register</span>
+											</a>
+										</li>
+										<li class="menu-item ">
+											<a href="#" class="menu-link">
+												<span class="menu-text text-muted">POA</span>
+												<span class="menu-desc"></span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+				</div><div class="container-fluid">
+		<div class="row mt-3 m-0">
+			<div class="col-12 col-md-12">
+				<div class="col-12 mb-2">
+
+					<nav>
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="/">Liberty</a></li>
+							<li class="breadcrumb-item active">Login</li>
+						</ol>
+					</nav>
+					
+                    <script>
+                    document.write("<div class=\"alert alert-danger\">Your browser has javascript enabled, for your security, you are suggested to disable it. Libert doesn't require javascript to work</div>");
+                    </script>
+
+					<div class="col-12">
+						<div class="container text-center">
+							<div class="row justify-content-center">
+								<div class="col-md-5 col-lg-4">
+								<form method="post">
+								    
+                                    <div class="form-group">
+                                        <label class="font-weight-bolder float-left">Username</label>
+                                        <input class="form-control h-auto rounded-lg" type="text" name="username" required="">
+								    </div>
+                                    <div class="form-group">
+                                        <label class="font-weight-bolder float-left">Password</label>
+                                        <a href="/forgotpassword" class="text-liberty font-weight-bolder float-right">Forgot Password</a>
+                                        <input class="form-control h-auto rounded-lg" type="password" name="password" required="">
+								    </div>
+									
+                                    <div class="form-group">
+                                        <label class="font-weight-bolder float-left">Captcha</label>
+                                        <input class="form-control h-auto rounded-lg" type="text" name="challenge" required="">
+								    </div>
+									
+									<img src="/captcha">
+									<button class="btn btn-primary btn-block py-2 my-3" name="submit">Sign In</button>
+									<a href="/register">or sign up</a>
+								</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
