@@ -11,5 +11,5 @@ dfd["scam/crime"] = ['scam', 'crime', 'word', 'safe', 'time', 'secure', 'securit
 dfd["forum/blog"] = ['service', 'site', 'email', 'address', 'forum', 'web', 'security', 'secure', 'tor', 'network', 'welcome', 'list', 'privacy', 'anonymous', 'access', 'post', 'guide', 'browser', 'comment', 'wiki', 'social', 'chat', 'file', 'message', 'name', 'active', 'answer', 'policy', 'issue', 'note', 'status', 'communication', 'share', 'trusted', 'twitter', 'community', 'deepweb', 'deep', 'dark', 'database', 'document', 'proxy', 'bookmark', 'category', 'asked', 'mailing', 'mail']
 dfd['financial'] = ['carding', 'store', 'btc', 'service', 'bitcoin', 'payment', 'card', 'account', 'buy', 'order', 'money', 'credit', 'site', 'purchase', 'cash', 'used', 'using', 'delivery', 'bitcoins', 'secure', 'number', 'reserved', 'shop', 'bank', 'access', 'atm', 'wallet', 'mastercard', 'financial', 'moneygram', 'vryptocurrency', 'bill', 'dollar', 'paypal', 'crypto', 'creditcard', 'pay', 'fast', 'site']
 
-with open('category_words.txt', 'wb') as f:
+with open('/home/ahyoung/Desktop/tor-folder/final/category_words.txt', 'wb') as f:
     pickle.dump(dfd, f)

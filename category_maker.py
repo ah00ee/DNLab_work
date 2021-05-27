@@ -46,9 +46,13 @@ def get_category(database, path_dir):
     con = sqlite3.connect(database)
     cur = con.cursor()
 
-    d = dictionary('./category_words.txt')
+    # category 상태 초기화
+    cur.execute('update AddrCategory set category = NULL')
+
+    d = dictionary('/home/ahyoung/Desktop/tor-folder/final/category_words.txt')
     for f in file_list:    
         fpath = os.path.join(path_dir, f)
+        fname = f
         print(f)
         data, maximum, category = '', 0.1, 'etc.'
         
@@ -69,7 +73,7 @@ def get_category(database, path_dir):
             print(cnt)
 
         c = cur.execute('select id from CategoryID where category = "%s"'%(category)).fetchone()[0]
-        cur.execute('update AddrCategory set category = "%d" where addr in (select id from AddrHash_ID where addr = "%s")'%(c, fpath[:-5]))
+        cur.execute('update AddrCategory set category = "%d" where addr in (select id from AddrHash_ID where addr = "%s")'%(c, fname[:-5]))
         print()
 
     con.commit()

@@ -17,7 +17,7 @@ def main():
     # output 및 html 폴더 생성
     os.makedirs(FLAGS.output, exist_ok=True)
     path_dir = os.path.join(FLAGS.output, 'html')
-    '''
+    
     try:
         os.makedirs(path_dir, exist_ok=False)    
     except FileExistsError:
@@ -44,10 +44,10 @@ def main():
     
     # hash 생성 및 업데이트
     hash_maker(FLAGS.input, path_dir)
-    '''
-
+    
     # 수집일 갱신
     refresh_availability(FLAGS.input)
+
     # 카테고리 생성
     get_category(FLAGS.input, path_dir)
 
@@ -59,7 +59,7 @@ if __name__ == '__main__':
     parser.add_argument('-i', '--input', type=str, required='True',
                         help='The addresses formed database for testing')
     parser.add_argument('-o', '--output', type=str,
-                        default='./output',
+                        default='/home/ahyoung/Desktop/tor-folder/final/output',
                         help='The output directory for saving html files')
     parser.add_argument('-p', '--port', type=int,
                         default=9050,
