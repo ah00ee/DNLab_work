@@ -53,11 +53,11 @@ def get_category(database, path_dir):
     for f in file_list:    
         fpath = os.path.join(path_dir, f)
         fname = f
-        print(f)
+        #print(f)
         data, maximum, category = '', 0.1, 'etc.'
         
         for key in d.keys():
-            print(key, end=': ')
+            #print(key, end=': ')
             word_features, cnt = d[key], 0
 
             with open(fpath, 'r') as f:
@@ -70,11 +70,11 @@ def get_category(database, path_dir):
                 if cnt > maximum:
                     maximum = cnt
                     category = key
-            print(cnt)
+            #print(cnt)
 
         c = cur.execute('select id from CategoryID where category = "%s"'%(category)).fetchone()[0]
         cur.execute('update AddrCategory set category = "%d" where addr in (select id from AddrHash_ID where addr = "%s")'%(c, fname[:-5]))
-        print()
+        #print()
 
     con.commit()
     con.close()

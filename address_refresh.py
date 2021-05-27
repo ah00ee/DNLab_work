@@ -24,32 +24,31 @@ def main():
         shutil.rmtree(path_dir)
         os.makedirs(path_dir, exist_ok=True)
 
-    addresses = address_list(FLAGS.input)
+    addresses, total, new = address_list(FLAGS.input)
 
     get_args(FLAGS)
     
     # html 파일 생성
     print(f'Start html file making')
-
-    time_start = time.time()
     with multiprocessing.Pool(FLAGS.number) as p:
         joined_rows = p.imap(file_maker, get_address(addresses))
         
         for row in joined_rows:
             print(row)
-        
-    time_end = time.time()
-
-    print(f'End up after {time_end - time_start}')
     
     # hash 생성 및 업데이트
+    print("Start updating hash...")
     hash_maker(FLAGS.input, path_dir)
     
     # 수집일 갱신
-    refresh_availability(FLAGS.input)
+    print("Start updating date...")
+    available = refresh_availability(FLAGS.input)
 
     # 카테고리 생성
+    print("Start updating category...")
     get_category(FLAGS.input, path_dir)
+
+    print("\nFinish testing onion address\n>>>Total: '%d' | # of new address: '%d' | # of available address: '%d'"%(total, new, available))
     
 if __name__ == '__main__':
     import argparse

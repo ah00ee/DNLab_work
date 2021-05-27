@@ -75,5 +75,10 @@ def hash_maker(database, path_dir):
         hash = encrypt_file(fpath)
         cur.execute('UPDATE AddrHash_ID SET hash = "%s" WHERE addr = "%s"'%(hash, f[:-5]))
     
+    available = cur.execute('select * from AddrHash_ID where hash is not null').fetchall()
+    available = len(available)
+
     con.commit()
     con.close()
+
+    return available

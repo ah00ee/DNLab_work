@@ -9,10 +9,13 @@ def address_list(database):
     cur.execute('select addr from AddrHash_ID where id in (select id from Addr_Valid where availability is NULL or julianday(CURRENT_DATE) - julianday(Date) >= availability)')
     addr_check = cur.fetchall()
     addr_check = [addr[0] for addr in addr_check]
+
+    total, new = cur.execute('select * from AddrHash_ID').fetchall(), cur.execute('select * from Addr_Valid where Date is null').fetchall()
+    total, new = len(total), len(new)
        
     con.close()
 
-    return addr_check
+    return addr_check, total, new
 
 
 def refresh_availability(database):
