@@ -27,7 +27,7 @@ def main():
     addresses = address_list(FLAGS.input)
 
     get_args(FLAGS)
-
+    
     # html 파일 생성
     print(f'Start html file making')
 
@@ -50,7 +50,7 @@ def main():
 
     # 카테고리 생성
     get_category(FLAGS.input, path_dir)
-
+    
 if __name__ == '__main__':
     import argparse
 

@@ -4,12 +4,12 @@ import sqlite3
 def address_list(database):
     con = sqlite3.connect(database)
     cur = con.cursor()
-
+    
     # 새로 저장한 주소 + 기존 접속 가능 주소
     cur.execute('select addr from AddrHash_ID where id in (select id from Addr_Valid where availability is NULL or julianday(CURRENT_DATE) - julianday(Date) >= availability)')
     addr_check = cur.fetchall()
     addr_check = [addr[0] for addr in addr_check]
-    
+       
     con.close()
 
     return addr_check
