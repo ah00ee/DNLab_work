@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Turkish Citizenship Database</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<h1>Turkish Citizenship Database</h1>
+<p>Who would have imagined that backwards ideologies, cronyism and rising 
+religious extremism in Turkey would lead to a crumbling and vulnerable
+technical infrastructure?</p>
+
+<p>This leak contains the following information for <b>49,611,709</b> Turkish citizens: (IN CLEARTEXT)</p>
+<ul>
+  <li>National Identifier (TC Kimlik No)</li>
+  <li>First Name</li>
+  <li>Last Name</li>
+  <li>Mother's First Name</li>
+  <li>Father's First Name</li>
+  <li>Gender</li>
+  <li>City of Birth</li>
+  <li>Date of Birth</li>
+  <li>ID Registration City and District</li>
+  <li>Full Address</li>
+</ul>
+
+<p><b>Lesson to learn for Turkey:</b></p>
+<ul>
+  <li>Bit shifting isn't encryption.</li>
+  <li>Index your database. We had to fix your sloppy DB work.</li>
+  <li>Putting a hardcoded password on the UI hardly does anything for security.</li>
+  <li>Do something about Erdogan! He is destroying your country beyond recognition.</li>
+</ul>
+
+<p><b>Lessons for the US?</b> We really shouldn't elect Trump, that guy sounds like he knows even 
+less about running a country than Erdogan does.</p>
+
+<div style='min-height: 3em'></div>
+
+<p><b>Let's take a look at the data:</b></p>
+<pre>
+mernis=# SELECT * FROM citizen WHERE last = 'ERDOGAN' AND \
+                                     first = 'RECEP TAYYIP' AND \ 
+                                     date_of_birth LIKE '%/%/1954';
+-[ RECORD 1 ]------------+-------------------------
+uid                      | 33693950
+national_identifier      | 17291716060
+first                    | RECEP TAYYIP
+last                     | ERDOGAN
+mother_first             | TENZILE
+father_first             | AHMET
+gender                   | E
+birth_city               | ISTANBUL
+date_of_birth            | 26/2/1954
+id_registration_city     | RIZE
+id_registration_district | GUNEYSU
+address_city             | ANKARA
+address_district         | KECIOREN
+address_neighborhood     | KAVACIK SUBAYEVLERI MAH.
+street_address           | KUSADASI SOKAK
+door_or_entrance_number  | 26
+misc                     | <NULL>
+</pre>
+
+<pre>
+mernis=# SELECT * FROM citizen WHERE last = 'DAVUTOGLU' AND \
+                                     first = 'AHMET' AND \
+                                     address_city = 'ISTANBUL' AND \
+                                     date_of_birth LIKE '%/1959';
+-[ RECORD 1 ]------------+------------------
+uid                      | 12409622
+national_identifier      | 51541376338
+first                    | AHMET
+last                     | DAVUTOGLU
+mother_first             | MEMNUNE
+father_first             | MEHMET DURAN
+gender                   | E
+birth_city               | TASKENT
+date_of_birth            | 26/2/1959
+id_registration_city     | KONYA
+id_registration_district | TASKENT
+address_city             | ISTANBUL
+address_district         | BAHCELIEVLER
+address_neighborhood     | BAHCELIEVLER MAH.
+street_address           | ISMAILPASA SOKAK
+door_or_entrance_number  | 25
+misc                     | <NULL>
+</pre>
+
+<pre>
+mernis=# SELECT * FROM citizen WHERE last = 'GUL' AND \
+                                     first = 'ABDULLAH' AND \
+                                     mother_first = 'ADVIYE';
+-[ RECORD 1 ]------------+--------------------
+uid                      | 47612408
+national_identifier      | 21353291242
+first                    | ABDULLAH
+last                     | GUL
+mother_first             | ADVIYE
+father_first             | AHMET HAMDI
+gender                   | E
+birth_city               | KAYSERI
+date_of_birth            | 29/10/1950
+id_registration_city     | KAYSERI
+id_registration_district | KOCASINAN
+address_city             | ANKARA
+address_district         | CANKAYA
+address_neighborhood     | CANKAYA MAH.
+street_address           | SEHIT ERSAN CADDESI
+door_or_entrance_number  | 3
+misc                     | <NULL>
+</pre>
+
+<div style='min-height: 3em'></div>
+
+<h2><b>Download</b></h2>
+<p>mernis.sql.tar.gz (1.5GB compressed - 6.6GB uncompressed)</p>
+<p><a href="/mernis.tar.gz">DDL</a> | <a href="/mernis.tar.gz.torrent">Torrent</a> | <a href="magnet:?xt=urn:btih:92b8bc93eb3ac91a0c5da26a8bbd32c864e9b3e7&dn=mernis.tar.gz&tr=http%3A%2F%2F9.rarbg.com%3A2710%2Fannounce&tr=http%3A%2F%2Fannounce.torrentsmd.com%3A6969%2Fannounce&tr=http%3A%2F%2Fbt.careland.com.cn%3A6969%2Fannounce&tr=http%3A%2F%2Fexplodie.org%3A6969%2Fannounce&tr=http%3A%2F%2Fmgtracker.org%3A2710%2Fannounce&tr=http%3A%2F%2Ftracker.tfile.me%2Fannounce&tr=http%3A%2F%2Ftracker.torrenty.org%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.trackerfix.com%2Fannounce&tr=http%3A%2F%2Fwww.mvgroup.org%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.com%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2Fcoppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fglotorrents.pw%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.glotorrents.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker4.piratux.com%3A6969%2Fannounce">Magnet URL</a></p>
+<p><b>SHA512(mernis.sql):</b> b1f61764c44117ae9d11e3a825b34b042e973797b94b29a5b4b65cfc009ea5b49</br>
+be7fc5438c2f5fb388b7431c3d967ea959bc976c4bc81123a18dee68a61feba</p> 
+
+<div style='min-height: 3em'></div>
+
+</body>
+</html>

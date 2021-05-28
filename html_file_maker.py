@@ -63,7 +63,8 @@ def encrypt_file(html, blocksize=65536):
 
 def hash_maker(database, path_dir):
     file_list = os.listdir(path_dir)
-
+    available = len(file_list)
+    
     con = sqlite3.connect(database)
     cur = con.cursor()
 
@@ -74,11 +75,8 @@ def hash_maker(database, path_dir):
         fpath = os.path.join(path_dir, f)
         hash = encrypt_file(fpath)
         cur.execute('UPDATE AddrHash_ID SET hash = "%s" WHERE addr = "%s"'%(hash, f[:-5]))
-    
-    available = cur.execute('select * from AddrHash_ID where hash is not null').fetchall()
-    available = len(available)
 
     con.commit()
     con.close()
-
+    
     return available

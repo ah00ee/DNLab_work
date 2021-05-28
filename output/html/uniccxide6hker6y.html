@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css?v=2.0" />
+<link rel="stylesheet" type="text/css" href="/ui/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/ui/css/bootstrap-theme.min.css?v=1.1" />
+<link rel="stylesheet" type="text/css" href="/ui/css/nstyle.min.css?v=1.3" />
+<link rel="stylesheet" type="text/css" href="/plugins/password-indicator/css/password-indicator.css" />
+<script type="text/javascript" src="/js/jquery.min.js?v=1"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js?v=1.1"></script>
+<script type="text/javascript" src="/js/bootstrap-noconflict.js?v=1.2"></script>
+<script type="text/javascript" src="/js/jquery-ui-no-conflict.min.js?v=1.2"></script>
+<script type="text/javascript" src="/js/main.min.js?v=2.4"></script>
+<script type="text/javascript" src="/plugins/password-indicator/js/password-indicator.js"></script>
+<script type="text/javascript" src="/js/jquery.yiiactiveform.js?v=1.2"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+var ghsdfkjlkhhealk35bbr = "d2dlM2ZLR3VXS1gxWExCb0V4bDdUTG1vMEhBS3laejZ3M1a8DcfitVwdTpY7WG0kT0AH5IF9UKWge1nLYZIxjQ=="; 
+/*]]>*/
+</script>
+<title>Unicc - Login</title>
+</head>
+<body class='login'>
+    
+<form class="form-signin form" autocomplete="off" id="login-form" action="/" method="post">
+<input type="hidden" value="d2dlM2ZLR3VXS1gxWExCb0V4bDdUTG1vMEhBS3laejZ3M1a8DcfitVwdTpY7WG0kT0AH5IF9UKWge1nLYZIxjQ==" name="ghsdfkjlkhhealk35bbr" />
+<div class='blocklogin'>
+    <div class='titlelogin'>
+        <img src='/img/logo.png'>
+
+        <p>login area</p>
+    </div>
+    <div class='loginform'>
+        <div class='inputslogin'>
+
+            <label for='name'><img src='/img/log_user.png'></label>
+            <div class="form-group"><div><input class="form-control" placeholder="Username" name="LoginForm[username]" id="LoginForm_username" type="text" /><div class="help-block error" id="LoginForm_username_em_" style="display:none"></div></div></div>            <label for='pass'><img src='/img/log_pass.png'></label>
+            <div class="form-group"><div><input class="form-control" placeholder="Password" name="LoginForm[password]" id="LoginForm_password" type="password" /><div class="help-block error" id="LoginForm_password_em_" style="display:none"></div></div></div>            <img class="captchaimg" id="yw0" src="/img/ajax-loader.gif" alt="" /><div class="form-group"><div><input style="width:100%; margin-top:15px;" class="form-control" placeholder="Captcha" name="LoginForm[captcha]" id="LoginForm_captcha" type="text" /><div class="help-block error" id="LoginForm_captcha_em_" style="display:none"></div></div></div>            <a href="http://anonym.to/?https://youtu.be/NT4PED4iqLU" class="wtchvdo" rel="noreferrer" target="_blank">Watch
+                our PROMO video</a>
+            <button type='submit'>enter</button>
+                            <a href="/signup/">
+                    <button type='button'>register</button>
+                </a>
+                    </div>
+
+        <div id="yw1"></div>    </div>
+
+</div>
+</form><script type="text/javascript">
+/*<![CDATA[*/
+jQuery(function($) {
+jQuery('[data-toggle=popover]').popover();
+jQuery('[data-toggle=tooltip]').tooltip();
+
+        jQuery.ajax({
+            url: "\/home\/captcha\/refresh\/1\/",
+            dataType: 'json',
+            cache: false,
+            success: function(data) {
+                jQuery('#yw0').attr('src', data['url']);
+                jQuery('body').data('captcha.hash', [data['hash1'], data['hash2']]);
+            }
+	    });
+        
+jQuery(document).on('click', '#yw0', function(){
+	jQuery('#yw0').attr('src', '/img/ajax-loader.gif');
+	jQuery.ajax({
+		url: "\/home\/captcha\/refresh\/1\/",
+		dataType: 'json',
+		cache: false,
+		success: function(data) {
+			jQuery('#yw0').attr('src', data['url']);
+			jQuery('body').data('captcha.hash', [data['hash1'], data['hash2']]);
+		}
+	});
+	return false;
+});
+
+jQuery('#yw1_0 .alert').alert();
+jQuery('#login-form').yiiactiveform({'validateOnSubmit':true,'errorCssClass':'has\x2Derror','successCssClass':'has\x2Dsuccess','inputContainer':'div.form\x2Dgroup','attributes':[{'id':'LoginForm_username','inputID':'LoginForm_username','errorID':'LoginForm_username_em_','model':'LoginForm','name':'username','enableAjaxValidation':false,'clientValidation':function(value, messages, attribute) {
+
+if(jQuery.trim(value)=='') {
+	messages.push("Username cannot be blank.");
+}
+
+
+if(jQuery.trim(value)!='') {
+	
+if(value.length<6) {
+	messages.push("Username is too short (minimum is 6 characters).");
+}
+
+}
+
+
+if(!value.match(/^[a-z0-9\-\.\_]+$/i)) {
+	messages.push("Username is invalid.");
+}
+
+}},{'id':'LoginForm_password','inputID':'LoginForm_password','errorID':'LoginForm_password_em_','model':'LoginForm','name':'password','enableAjaxValidation':false,'clientValidation':function(value, messages, attribute) {
+
+if(jQuery.trim(value)=='') {
+	messages.push("Password cannot be blank.");
+}
+
+
+if(jQuery.trim(value)!='') {
+	
+if(value.length<8) {
+	messages.push("Password is too short (minimum is 8 characters).");
+}
+
+}
+
+}},{'id':'LoginForm_captcha','inputID':'LoginForm_captcha','errorID':'LoginForm_captcha_em_','model':'LoginForm','name':'captcha','enableAjaxValidation':false,'clientValidation':function(value, messages, attribute) {
+
+if(jQuery.trim(value)=='') {
+	messages.push("Captcha empty.");
+}
+
+}}],'errorCss':'error'});
+});
+/*]]>*/
+</script>
+</body>
+</html>

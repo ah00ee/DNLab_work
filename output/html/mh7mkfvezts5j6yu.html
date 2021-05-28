@@ -1,0 +1,1808 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Bluish Coder</title>
+   <meta name="author" content="Chris Double" />
+
+   <link href="./atom.xml" rel="alternate" title="Bluish Coder" type="application/atom+xml" />
+   <link rel="alternate" type="application/rss+xml" title="RSS" href="./rss.xml"/> 
+
+   <link rel="stylesheet" href="./css/screen.css" type="text/css" media="screen, projection">
+   <link rel="stylesheet" href="./css/print.css" type="text/css" media="print">
+   <!--[if lt IE 8]><link rel="stylesheet" href="./css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+   <link rel="stylesheet" href="./css/syntax.css" type="text/css" />
+   <link rel="stylesheet" href="./css/bluishcoder.css" type="text/css">
+   <link rel="canonical" href="https://bluishcoder.co.nz/index.html"/>
+   <script>
+     (function (w,d,s,o,f,js,fjs) {
+     w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
+     js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+     js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
+     }(window, document, 'script', 'plausible', 'https://plausible.io/js/p.js'));
+   
+     plausible('page')
+   </script>
+</head>
+<body>
+  <div class="container">
+    <div class="span-24 blog-header">
+      <h1 id="blog-title"><a href="./index.html">Bluish Coder</a></h1>
+      <p id="blog-description">Programming Languages, Martials Arts and Computers. The Weblog of Chris Double.</p>
+    </div>
+    
+    <hr>
+    <div class="span-20">
+      
+
+  
+    <div class="post">
+      <div class="span-2"><p class="small-heading">2020-04-18</p></div>
+      <div class="span-18 last">
+      <h2 class="post-title"><a href="././2020/04/18/fun-factor-libraries.html">Fun Factor Libraries</a></h2>
+      <p><a href="https://factorcode.org/">Factor</a> is a programming language I've <a href="./tags/factor/">written about before</a> and in the early days of Factor development I wrote a number of libraries and contributed to development. It's been a while since I've contributed but I still use Factor. The development environment has a very Smalltalk-like feel to it and it includes full documentation and browseable source code of libraries.</p>
+
+<p>This post isn't about Factor the language, but is about some of the neat fun libraries that people have written that shows off the graphical development system a bit.</p>
+
+<h2>Minesweeper</h2>
+
+<p>The first example is an implementation of the game Minesweeper in Factor. A <a href="https://re-factor.blogspot.com/2018/02/minesweeper.html">blog post by the author</a> explains the implementation. To run it inside Factor, do the following:</p>
+
+<pre><code>"minesweeper" run
+</code></pre>
+
+<p>A new window will open showing the game. Help can be shown with:</p>
+
+<pre><code>"minesweeper" help
+</code></pre>
+
+<p><img src="./factor/factor_minesweeper.gif"></p>
+
+<h2>XKCD</h2>
+
+<p>Another fun example is displaying XKCD comics inside the Factor REPL. The <a href="http://re-factor.blogspot.com/2011/04/xkcd.html">implementation is explained by the author here</a>.</p>
+
+<pre><code>USE: xkcd
+latest-xkcd.
+...comic displayed here...
+random-xkcd.
+...comic displayed here...
+</code></pre>
+
+<p><img src="./factor/factor_xkcd.gif"></p>
+
+<h2>Wikipedia</h2>
+
+<p>If it seems like all the examples I'm using are from the excellent re-factor blog - well, most of them are. This blog post from re-factor <a href="https://re-factor.blogspot.com/2012/12/today-in-history.html">shows pulling historical facts from Wikipedia</a>:</p>
+
+<pre><code>USE: wikipedia
+USE: calendar
+
+today historical-events.
+...a list of historical events from wikipedia for today...
+
+yesterday historical-births.
+...a list of historical births from wikipedia for yesterday...
+
+5 weeks ago historical-deaths.
+...a list of historical deaths from wikipedia for five weeks ago...
+</code></pre>
+
+<p>The items in the list are graphical elements that can be manipulated. Left clicking on the coloured words will open a URL in the default web browser. Right clicking allows you to push the element on the Factor stack and manipulate it.</p>
+
+<p>The <a href="https://docs.factorcode.org/content/article-calendar.html">calendar vocab</a> has a lot of interesting words that allow doing calculations like "5 weeks ago".</p>
+
+<p><img src="./factor/factor_wikipedia.gif"></p>
+
+<h2>Hacker News</h2>
+
+<p>There's a <a href="https://docs.factorcode.org/content/vocab-hacker-news.html">hacker-news</a> vocabulary that provides words to list current articles on the <a href="https://news.ycombinator.com/">Hacker News</a> website. Like the previous Wikipedia example, the graphical elements are clickable objects:</p>
+
+<pre><code>USE: hacker-news
+
+hacker-news-top.
+...list of top articles...
+
+hacker-news-show.
+...list articles related to showing projects...
+</code></pre>
+
+<p><img src="./factor/factor_hackernews.gif"></p>
+
+<h2>CPU 8080 Emulator</h2>
+
+<p>A number of years ago I wrote a CPU 8080 emulator in Factor and used this to implement a <a href="./2007/05/12/factor-space-invaders-updated.html">Space Invaders Emulator</a> and then emulators for a couple of other 8080 arcade games, Balloon Bomber and Lunar Rescue. These examples require the original arcade ROMs and instructions for using them are in the online help:</p>
+
+<pre><code>"rom.space-invaders" run
+...opens in a new window...
+"rom.balloon-bomber" run
+...opens in a new window...
+"rom.lunar-rescue" run
+...opens in a new window...
+
+"rom.space-invaders" help
+...displays help...
+</code></pre>
+
+<p><img src="./factor/factor_cpu8080.gif"></p>
+
+<h2>Gopher Implementation</h2>
+
+<p>Another magical implementation from the re-factor blog, a <a href="https://re-factor.blogspot.com/2016/10/gopher-server.html">Gopher server</a> and a <a href="http://re-factor.blogspot.com/2014/12/gopher.html">graphical Gopher Client</a>. This is a video I made of the gopher client on YouTube:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YoHkx9aICaQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<p>I also did a video that shows some Factor development tools on the running Gopher client to show how everything is live in Factor:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sozwQ7QmOhs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<h2>And More</h2>
+
+<p>There's much more buried inside Factor. The <a href="https://docs.factorcode.org/content/article-handbook-library-reference.html">list of articles</a> and <a href="https://docs.factorcode.org/content/article-vocab-index.html">list of vocabularies</a> from the online help is a good way to explore. This help system is also available offline in a Factor install. By default many libraries aren't loaded when Factor starts but you can force loading everything using <code>load-all</code>:</p>
+
+<pre><code>load-all
+...all vocabs are loaded - prepare to wait for a while...
+save
+...saves the image so when factor is restarted the vocabs remain loaded...
+</code></pre>
+
+<p>The benefit of doing this while developing is all the online help, source and words are available via the inbuilt tools like "apropos", "usage", etc.</p>
+
+      <div>Tags: 
+        
+          <a href="./tags/factor/index.html">factor</a>&nbsp;
+        
+      </div>
+      </div>
+      <hr>
+    </div>
+  
+    <div class="post">
+      <div class="span-2"><p class="small-heading">2019-10-03</p></div>
+      <div class="span-18 last">
+      <h2 class="post-title"><a href="././2019/10/03/defining-types-in-shen.html">Defining Types in Shen</a></h2>
+      <p>The <a href="http://shenlanguage.org/">Shen programming language</a> has an extensible type system. Types are defined using <a href="https://en.wikipedia.org/wiki/Sequent_calculus">sequent calculus</a> and the system is powerful enough to create a variety of exotic types but it can be difficult when first starting with Shen to know how to use that power. In this post I hope to go through some basic examples of defining types in Shen without needing to know too much sequent calculus details.</p>
+
+<p>For an overview of Shen there is <a href="http://www.shenlanguage.org/learn-shen/shen_in_15mins.html">Shen in 15 minutes</a> and the <a href="http://www.shenlanguage.org/learn-shen/OSmanual.htm">Shen OS Kernel Manual</a>. An <a href="https://gravicappa.github.io/shen-js/shen.html#.doc/welcome.html">interactive JavaScript REPL</a> exists to try examples in the browser or pick on one of the <a href="https://shen-language.github.io/">existing Shen language ports</a>. For these examples I'm using my <a href="https://github.com/doublec/shen-wasp/">Wasp Lisp port of Shen</a>.</p>
+
+<p>Shen is optionally typed. The type checker can be turned off and on. By default it is off and this can be seen in the Shen prompt by the presence of a '<code>-</code>' character:</p>
+
+<pre><code>(0-) ...shen code...
+</code></pre>
+
+<p>Turning type checking on is done by using <code>(tc +)</code>. The '<code>-</code>' in the prompt changes to a '<code>+</code>' to show type checking is active. It can be turned off again with <code>(tc -)</code>:</p>
+
+<pre><code>(0-) (tc +)
+(1+) (tc -)
+(2-) ...
+</code></pre>
+
+<p>Types in Shen are defined using <code>datatype</code>. The body of the <code>datatype</code> definition contains a series of sequent calculus rules. These rules define how an object in Shen can be proved to belong to a particular type. Rather than go through a detailed description of sequent calculus, I'm going to present common examples of types in Shen to learn by example and dive into details as needed. There's the <a href="https://www.amazon.co.uk/Book-Shen-Third-Mark-Tarver/dp/1784562130">Shen Language Book</a> for much more detail if needed.</p>
+
+<h2>Records</h2>
+
+<p>One way of storing collections of data in Shen is to use lists or vectors. For example, given an the concept of a 'person' that has a name and age, this can be stored in a list with functions to get the relevent data:</p>
+
+<pre><code>(tc -)
+
+(define make-person
+  Name Age -&gt; [Name Age])
+
+(define get-name
+  [Name Age] -&gt; Name)
+
+(define get-age
+  [Name Age] -&gt; Age)
+
+(get-age (make-person "Person1" 42))
+ =&gt; 42
+</code></pre>
+
+<p>In the typed subset of Shen we can define a type for this person object using <code>datatype</code>:</p>
+
+<pre><code>(datatype person
+  N : string; A : number;
+  _______________________
+  [N A] : person;)
+</code></pre>
+
+<p>This defines one sequent calculus rule. The way to read it is starting with the code below the underscore line, followed by the code above it. In this case the rule states that if an expression matching the pattern <code>[N A]</code> is encountered, where <code>N</code> is a <code>string</code> and <code>A</code> is a number, then type that expression as <code>person</code>. With that rule defined, we can ask Shen if lists are of the type <code>person</code>:</p>
+
+<pre><code>(0+) ["Person" 42] : person
+["Person1" 42] : person
+
+(1+) ["Person1" "Person1"] : person
+[error shen "type error"]
+
+(2+) ["Person 42"]
+["Person1" 42] : person
+</code></pre>
+
+<p>Given this <code>person</code> type, we might write a <code>get-age</code> function that is typed such that it only works on <code>person</code> objects as follows (The <code>{ ...}</code> syntax in function definitions provides the expected type of the function):</p>
+
+<pre><code>(define get-age
+  { person --&gt; number }
+  [N A] -&gt; A)
+[error shen "type error in rule 1 of get-age"]
+</code></pre>
+
+<p>Shen rejects this definition as not being type safe. The reason for this is because our <code>datatype</code> definition only states that <code>[N A]</code> is a <code>person</code> if <code>N</code> is a <code>string</code> and <code>A</code> is a <code>number</code>. It does not state that a <code>person</code> object is constructed only of a <code>string</code> and <code>number</code>. For example, we could have an additional definition as follows:</p>
+
+<pre><code>(datatype person2
+  N : string; A : string;
+  _______________________
+  [N A] : person;)
+</code></pre>
+
+<p>Now we can create different types of <code>person</code> objects:</p>
+
+<pre><code>(0+) ["Person" 42 ] : person
+["Person" 42] : person
+
+(1+) ["Person" "young"] : person
+["Person" "young"] : person
+</code></pre>
+
+<p><code>get-age</code> is obviously badly typed in the presence of this additional type of <code>person</code> which is why Shen rejected it originally. To resolve this we need to tell Shen that an <code>[N A]</code> is a <code>person</code> if and only if <code>N</code> is a <code>string</code> and <code>A</code> is a <code>person</code>. This is done with what is called a 'left rule'. Such a rule defines how a <code>person</code> object can be deconstructed. It looks like this:</p>
+
+<pre><code>(datatype person3
+  N : string, A: number &gt;&gt; P;
+  ___________________________
+  [N A] : person &gt;&gt; P;)
+</code></pre>
+
+<p>The way to read this type of rule is that, if <code>[N A]</code> is a <code>person</code> then <code>N</code> is a <code>string</code> and <code>A</code> is a number. With that loaded into Shen, <code>get-age</code> type checks:</p>
+
+<pre><code>(define get-age
+   { person --&gt; number }
+   [N A] -&gt; A)
+get-age : (person --&gt; number)
+
+(0+) (get-age ["Person" 42])
+42 : number
+</code></pre>
+
+<p>The need to create a left rule, dual to the right rule, is common enough that Shen has a short method of defining both in one definition. It looks like this - note the use of '=' instead of '_' in the separator line:</p>
+
+<pre><code>(datatype person
+   N : string; A : number;
+   =======================
+   [N A] : person;)
+
+(define get-age
+   { person --&gt; number }
+   [N A] -&gt; A)
+get-age : (person --&gt; number)
+
+(0+) (get-age ["Person" 42])
+42 : number
+</code></pre>
+
+<p>The above <code>datatype</code> is equivalent to declaring the two rules:</p>
+
+<pre><code>(datatype person
+  N : string; A : number;
+  _______________________
+  [N A] : person;
+
+  N : string, A: number &gt;&gt; P;
+  ___________________________
+  [N A] : person &gt;&gt; P;)
+</code></pre>
+
+<h2>Controlling type checking</h2>
+
+<p>When progamming at the REPL of Shen it's common to create <code>datatype</code> definitions that are no longer needed, or part of a line of thought you don't want to pursue. Shen provides ways of excluding or including rules in the typechecker as needed. When defining a set of rules in a <code>datatype</code>, that <code>datatype</code> is given a name:</p>
+
+<pre><code>(datatype this-is-the-name
+   ...
+)
+</code></pre>
+
+<p>The rules within that definition can be removed from selection by the typechecker using <code>preclude</code>, which takes a list of <code>datatype</code> names to ignore during type checking:</p>
+
+<pre><code>(preclude [this-is-the-name])
+</code></pre>
+
+<p>To re-add a <code>dataype</code>, use <code>include</code>:</p>
+
+<pre><code>(include [this-is-the-name])
+</code></pre>
+
+<p>There is also <code>include-all-but</code> and <code>preclude-all-but</code> to include or remove all but the listed names. These commands are useful for removing definitions you no longer want to use at the REPL, but also for speeding up type checking in a given file if you know the file only uses a particular set of datatypes.</p>
+
+<h2>Enumerations</h2>
+
+<p>An example of an enumeration type would be days of the week. In an ML style language this can be done like:</p>
+
+<pre><code>datatype days =   monday | tuesday | wednesday
+                | thursday | friday | saturday | sunday
+</code></pre>
+
+<p>In Shen this would be done using multiple sequent calculus rules.</p>
+
+<pre><code>(datatype days
+    ____________
+    monday : day;
+
+    ____________
+    tuesday : day;
+
+    ____________
+    wednesday : day;
+
+    ____________
+    thursday : day;
+
+    ____________
+    friday : day;
+
+    ____________
+    saturday : day;
+
+    ____________
+    sunday : day;)
+</code></pre>
+
+<p>Here there are no rules above the dashed underscore line, meaning that the given symbol is of the type <code>day</code>. A function that uses this type would look like:</p>
+
+<pre><code>(define day-number
+  { day --&gt; number }
+  monday    -&gt; 0
+  tuesday   -&gt; 1
+  wednesday -&gt; 2
+  thursday  -&gt; 3
+  friday    -&gt; 4
+  saturday  -&gt; 5
+  sunday    -&gt; 6)
+</code></pre>
+
+<p>It's quite verbose to define a number of enumeration types like this. It's possible to add a test above the dashed underline which allows being more concise. The test is introduced using <code>if</code>:</p>
+
+<pre><code>(datatype days
+  if (element? Day [monday tuesday wednesday thursday friday saturday sunday])
+  ____________________________________________________________________________
+  Day : day;)
+
+(0+) monday : day
+monday : day
+</code></pre>
+
+<p>Any Shen code can be used in these test conditions. Multiple tests can be combined:</p>
+
+<pre><code>(datatype more-tests
+  if (number? X)
+  if (&gt;= X 5)
+  if (&lt;= X 10)
+  ___________
+  X : between-5-and-10;)
+
+  (2+) 5 : between-5-and-10
+  5 : between-5-and-10
+
+  (3+) 4 : between-5-and-10
+  [error shen "type error\n"]
+</code></pre>
+
+<h2>Polymorphic types</h2>
+
+<p>To create types that are polymorphic (ie. generic), like the built-in <code>list</code> type, include a free variable representing the type. For example, something like the built in list where the list elements are stored as pairs can be approximated with:</p>
+
+<pre><code>(datatype my-list
+   _____________________
+   my-nil : (my-list A);
+
+   X : A; Y : (my-list A);
+   ========================
+   (@p X Y) : (my-list A);)
+
+
+(define my-cons
+  { A --&gt; (my-list A) --&gt; (my-list A) }
+  X Y -&gt; (@p X Y))
+
+(0+) (my-cons 1 my-nil)
+(@p 1 my-nil) : (my-list number)
+
+(1+) (my-cons 1 (my-cons 2 my-nil))
+(@p 1 (@p 2 my-nil)) : (my-list number)
+
+(2+) (my-cons "a" (my-cons "b" my-nil))
+(@p "a" (@p "b" my-nil)) : (my-list string)
+</code></pre>
+
+<p>Notice the use of the '=====' rule to combine left and right rules. This is required to enable writing something like <code>my-car</code> which requires proving that the type of the <code>car</code> of the list is of type <code>A</code>:</p>
+
+<pre><code>(define my-car
+   { (my-list A) --&gt; A }
+   (@p X Y) -&gt; X)
+</code></pre>
+
+<h2>List encoded with size</h2>
+
+<p>Using peano numbers we can create a list where the length of the list is part of the type:</p>
+
+<pre><code>(datatype list-n
+  ______
+  [] : (list-n zero A);
+
+  X : A; Y : (list-n N A);
+  ================================
+  [ X | Y ] : (list-n (succ N) A);)      
+
+(define my-tail
+  { (list-n (succ N) A) --&gt; (list-n N A) }
+  [Hd | Tl] -&gt; Tl)
+
+(define my-head
+  { (list-n (succ N) A) --&gt; A }
+  [Hd | Tl] -&gt; Hd)
+</code></pre>
+
+<p>This gives a typesafe <code>head</code> and <code>tail</code> operation whereby they can't be called on an empty list:</p>
+
+<pre><code>(0+) [] : (list-n zero number)
+[] : (list-n zero number)
+
+(1+) [1] : (list-n (succ zero) number)
+[1] : (list-n (succ zero) number)
+
+(2+) (my-head [])
+[error shen "type error\n"]
+
+(3+) (my-head [1])
+1 : number
+
+(4+) (my-tail [1 2 3])
+[2 3] : (list-n (succ (succ zero)) number)
+
+(5+) (my-tail [])
+[error shen "type error\n"]      
+</code></pre>
+
+<h2>Power and Responsibility</h2>
+
+<p>Shen gives a lot of power in creating types, but trusts you to make those types consistent. For example, the following creates an inconsistent type:</p>
+
+<pre><code>(datatype person
+  N : string; A : number;
+  _______________________
+  [N A] : person;
+
+  N : string; A : string;
+  _______________________
+  [N A] : person;
+
+  N : string, A: number &gt;&gt; P;
+  ___________________________
+  [N A] : person &gt;&gt; P;)
+</code></pre>
+
+<p>Here we are telling Shen that a <code>string</code> and <code>number</code> in a <code>list</code> is a <code>person</code>, and so too is a <code>string</code> and another <code>string</code>. But the third rule states that given a <code>person</code>, that is is composed of a <code>string</code> and a <code>number</code> only. This leads to:</p>
+
+<pre><code>(0+) (get-age ["Person" "Person"])
+...
+</code></pre>
+
+<p>This will hang for a long time as Shen attempts to resolve the error we've created.</p>
+
+<h2>Conclusion</h2>
+
+<p>Shen provides a programmable type system, but the responsibility lies on the programmer for making sure the types are consisitent. The examples given here provide a brief overview. For much more see <a href="https://www.amazon.co.uk/Book-Shen-Third-Mark-Tarver/dp/1784562130">The Book of Shen</a>. The <a href="http://shenlanguage.org/osmanual.htm">Shen OS Kernel Manual</a> also gives some examples. There are posts on the <a href="https://groups.google.com/forum/?hl=en#!forum/qilang">Shen Mailing List</a> that have more advanced examples of Shen types. Mark Tarver has a <a href="http://shenlanguage.org/shenpaper.pdf">case study</a> showing converting a lisp interpreter in Shen to use types.</p>
+
+      <div>Tags: 
+        
+          <a href="./tags/shen/index.html">shen</a>&nbsp;
+        
+      </div>
+      </div>
+      <hr>
+    </div>
+  
+    <div class="post">
+      <div class="span-2"><p class="small-heading">2019-06-23</p></div>
+      <div class="span-18 last">
+      <h2 class="post-title"><a href="././2019/06/23/getting-started-with-mercury.html">Getting Started with Mercury</a></h2>
+      <p><a href="https://www.mercurylang.org/">Mercury</a> is a logic programming
+language, similar to Prolog, but with static types. It feels like a
+combination of SML and Prolog at times. It was designed to help with
+programming large systems - that is large programs, large teams and
+better reliability, etc. The commercial product <a href="https://www.princexml.com/">Prince
+XML</a> is written in Mercury.</p>
+
+<p>I've played around with Mercury in the past but haven't done anything
+substantial with it. Recently I picked it up again. This post is a
+short introduction to building Mercury, and some example "Hello World"
+style programs to test the install.</p>
+
+<h2>Build</h2>
+
+<p>Mercury is written in the Mercury language itself. This means it needs
+a Mercury compiler to bootstrap from. The way I got a build going from
+source was to download the source for a <a href="http://dl.mercurylang.org/index.html">release of the
+day</a> version, build that, then
+use that build to build the Mercury source from github. The steps are
+outlined in the <a href="https://github.com/Mercury-Language/mercury/blob/master/README.bootstrap">README.bootstrap</a>
+file, but the following commands are the basic steps:</p>
+
+<pre><code>$ wget http://dl.mercurylang.org/rotd/mercury-srcdist-rotd-2019-06-22.tar.gz
+$ tar xvf mercury-srcdist-rotd-2019-06-22.tar.gz
+$ cd mercury-srcdist-rotd-2019-06-22
+$ ./configure --enable-minimal-install --prefix=/tmp/mercury
+$ make
+$ make install
+$ cd ..
+$ export PATH=/tmp/mercury/bin:$PATH
+</code></pre>
+
+<p>With this minimal compiler the main source can be built. Mercury has a
+number of backends, called 'grades' in the documentation. Each of
+these grades makes a number of tradeoffs in terms of generated
+code. They define the platform (C, assembler, Java, etc), whether GC
+is used, what type of threading model is available (if any), etc. The
+<a href="https://adventuresinmercury.blogspot.com/">Adventures in Mercury</a>
+blog has an <a href="https://adventuresinmercury.blogspot.com/2011/11/making-grade.html">article on some of the different
+grades</a>. Building
+all of them can take a long time - multiple hours - so it pays to
+limit it if you don't need some of the backends.</p>
+
+<p>For my purposes I didn't need the CSharp backend, but wanted to
+explore the others. I was ok with the time tradeoff of building the
+system. To build from the <code>master</code> branch of the github repository I
+did the following steps:</p>
+
+<pre><code>$ git clone https://github.com/Mercury-Language/mercury
+$ cd mercury
+$ ./prepare.sh
+$ ./configure --enable-nogc-grades --disable-csharp-grade \
+              --prefix=/home/myuser/mercury
+$ make PARALLEL=-j4
+$ make install PARALLEL=-j4
+$ export PATH=/home/myuser/mercury/bin:$PATH
+</code></pre>
+
+<p>Change the <code>prefix</code> to where you want Mercury installed. Add the
+relevant directories to the PATH as specified by the end of the build
+process.</p>
+
+<h2>Hello World</h2>
+
+<p>A basic "Hello World" program in Mercury looks like the following:</p>
+
+<pre><code>:- module hello.
+
+:- interface.
+:- import_module io.
+:- pred main(io, io).
+:- mode main(di, uo) is det.
+
+:- implementation.
+main(IO0, IO1) :-
+    io.write_string("Hello World!\n", IO0, IO1).
+</code></pre>
+
+<p>With this code in a <code>hello.m</code> file, it can be built and run with:</p>
+
+<pre><code>$ mmc --make hello
+Making Mercury/int3s/hello.int3
+Making Mercury/ints/hello.int
+Making Mercury/cs/hello.c
+Making Mercury/os/hello.o
+Making hello    
+$ ./hello
+Hello World!
+</code></pre>
+
+<p>The first line defines the name of the module:</p>
+
+<pre><code>:- module hello.
+</code></pre>
+
+<p>Following that is the definitions of the public interface of the module:</p>
+
+<pre><code>:- interface.
+:- import_module io.
+:- pred main(io, io).
+:- mode main(di, uo) is det.
+</code></pre>
+
+<p>We publically import the <code>io</code> module, as we use <code>io</code> definitions in
+the <code>main</code> predicate. This is followed by a declaration of the
+interface of <code>main</code> - like C this is the user function called by the
+runtime to execute the program. The definition here declares that
+<code>main</code> is a predicate, it takes two arguments, of type <code>io</code>. This is a
+special type that represents the "state of the world" and is how I/O
+is handled in Mercury. The first argument is the "input world state"
+and the second argument is the "output world state". All I/O functions
+take these two arguments - the state of the world before the function
+and the state of the world after.</p>
+
+<p>The <code>mode</code> line declares aspects of a predicate related to the logic
+programming side of things. In this case we declare that the two
+arguments passed to <code>main</code> have the "destructive input" mode and the
+"unique output" mode respectively. These modes operate similar to how
+linear types work in other languages, and the <a href="https://www.mercurylang.org/information/doc-latest/mercury_ref/Unique-modes.html#Unique-modes">reference manual has a
+section describing
+them</a>. For
+now the details can be ignored. The <code>is det</code> portion identifies the
+function as being deterministic. It always succeeds, doesn't backtrack
+and only has one result.</p>
+
+<p>The remaining code is the implementation. In this case it's just the implementation of the <code>main</code> function:</p>
+
+<pre><code>main(IO0, IO1) :-
+    io.write_string("Hello World!\n", IO0, IO1).
+</code></pre>
+
+<p>The two arguments to <code>main</code>, are the <code>io</code> types representing the before and after representation of the world. We call <code>write_string</code> to display a string, passing it the input world state, <code>IO0</code> and receiving the new world state in <code>IO1</code>. If we wanted to call an additional output function we'd need to thread these variables, passing the obtained output state as the input to the new function, and receiving a new output state. For example:</p>
+
+<pre><code>main(IO0, IO1) :-
+    io.write_string("Hello World!\n", IO0, IO1),
+    io.write_string("Hello Again!\n", IO1, IO2).
+</code></pre>
+
+<p>This state threading can be tedious, especially when refactoring - the need to renumber or rename variables is a pain point. Mercury has syntactic sugar for this called <a href="https://www.mercurylang.org/information/doc-latest/mercury_ref/State-variables.html#State-variables">state variables</a>, enabling this function to be written like this:</p>
+
+<pre><code>main(!IO) :-
+    io.write_string("Hello World!\n", !IO),
+    io.write_string("Hello Again!\n", !IO).
+</code></pre>
+
+<p>When the compiler sees <code>!Variable_name</code> in an argument list it creates two arguments with automatically generated names as needed.</p>
+
+<p>Another syntactic short cut can be done in the <code>pred</code> and <code>mode</code> lines. They can be combined into one line that looks like:</p>
+
+<pre><code>:- pred main(io::di, io::uo) is det.
+</code></pre>
+
+<p>Here the modes <code>di</code> and <code>uo</code> are appended to the type prefixed with a <code>::</code>. The resulting program looks like:</p>
+
+<pre><code>- module hello.
+
+:- interface.
+:- import_module io.
+:- pred main(io::di, io::uo) is det.
+
+:- implementation.
+main(!IO) :-
+    io.write_string("Hello World!\n", !IO),
+    io.write_string("Hello Again!\n", !IO).
+</code></pre>
+
+<h2>Factorial</h2>
+
+<p>The following is an implementation of factorial:</p>
+
+<pre><code>:- module fact.
+
+:- interface.
+:- import_module io.
+:- pred main(io::di, io::uo) is det.
+
+:- implementation.
+:- import_module int.
+:- pred fact(int::in, int::out) is det.
+
+fact(N, X) :-
+  ( N = 1 -&gt; X = 1 ; fact(N - 1, X0), X = N * X0 ).
+
+main(!IO) :-
+  fact(5, X),
+  io.print("fact(5, ", !IO),
+  io.print(X, !IO),
+  io.print(")\n", !IO).
+</code></pre>
+
+<p>In the implementation section here we import the <a href="https://www.mercurylang.org/information/doc-latest/mercury_library/int.html#int">int
+module</a>
+to access functions across machine integers. The <code>fact</code> predicate is
+declared to take two arguments, both of type <code>int</code>, the first an input
+argument and the second an output argument.</p>
+
+<p>The definition of <code>fact</code> uses Prolog syntax for an if/then
+statement. It states that if <code>N</code> is <code>1</code> then (the <code>-&gt;</code> token) the
+output variable, <code>X</code> is <code>1</code>. Otherwise (the <code>;</code> token), calculate the
+factorial recursively using an intermediate variable <code>X0</code> to hold the
+temporary result.</p>
+
+<p>There's a few other ways this could be written. Instead of the Prolog style if/then, we can use an if/then syntax that Mercury has:</p>
+
+<pre><code>fact(N, X) :-
+  ( if N = 1 then X = 1 else fact(N - 1, X0), X = N * X0 ).
+</code></pre>
+
+<p>Instead of using predicates we can declare <code>fact</code> to be a function. A function has no output variables, instead it returns a result just like functions in standard functional programming languages. The changes for this are to declare it as a function:</p>
+
+<pre><code>:- func fact(int) = int.
+fact(N) = X :-
+  ( if N = 1 then X = 1 else X = N * fact(N - 1) ).
+
+main(!IO) :-
+  io.print("fact(5, ", !IO),
+  io.print(fact(5), !IO),
+  io.print(")\n", !IO)
+</code></pre>
+
+<p>Notice now that the call to <code>fact</code> looks like a standard function call and is inlined into the <code>print</code> call in <code>main</code>. A final syntactic shortening of function implementations enables removing the <code>X</code> return variable name and returning directly:</p>
+
+<pre><code>fact(N) = (if N = 1 then 1 else N * fact(N - 1)).
+</code></pre>
+
+<p>Because this implementation uses machine integers it won't work for values that can overflow. Mercury comes with an arbitrary precision integer module, <a href="https://www.mercurylang.org/information/doc-latest/mercury_library/integer.html#integer">integer</a>, that allows larger factorials. Replacing the use of the <code>int</code> module with <code>integer</code> and converting the static integer numbers is all that is needed:</p>
+
+<pre><code>:- module fact.
+
+:- interface.
+:- import_module io.
+:- pred main(io::di, io::uo) is det.
+
+:- implementation.
+:- import_module integer.
+:- func fact(integer) = integer.
+
+fact(N) = (if N = one then one else N * fact(N - one)).
+
+main(!IO) :-
+  io.print("fact(1000, ", !IO),
+  io.print(fact(integer(1000)), !IO),
+  io.print(")\n", !IO).
+</code></pre>
+
+<h2>Conclusion</h2>
+
+<p>There's a lot more to Mercury. These are just first steps to test the
+system works. I'll write more about it in later posts. Some further
+reading:</p>
+
+<ul>
+<li><a href="https://adventuresinmercury.blogspot.com">Adventures in Mercury</a></li>
+<li><a href="https://www.mercurylang.org/information/doc-latest/mercury_library/index.html">Library reference manual</a></li>
+<li><a href="https://www.mercurylang.org/information/doc-latest/mercury_user_guide/index.html">Users guide</a></li>
+<li><a href="https://www.mercurylang.org/information/doc-latest/mercury_ref/index.html">Language Reference Manual</a></li>
+<li><a href="https://www.mercurylang.org/documentation/papers/book.pdf">Ralph Becket Mercury Tutorial (PDF)</a></li>
+<li><a href="https://github.com/Mercury-Language/mercury/wiki">Mercury Wiki</a></li>
+</ul>
+
+
+      <div>Tags: 
+        
+          <a href="./tags/mercury/index.html">mercury</a>&nbsp;
+        
+      </div>
+      </div>
+      <hr>
+    </div>
+  
+    <div class="post">
+      <div class="span-2"><p class="small-heading">2018-10-16</p></div>
+      <div class="span-18 last">
+      <h2 class="post-title"><a href="././2018/10/16/generalized-algebraic-data-types-in-ats.html">Generalized Algebraic Data Types in ATS</a></h2>
+      <p>The <a href="http://www.ats-lang.org/">ATS programming language</a> supports
+defining Generalized Algebraic Data Types (GADTS). They allow defining
+datatypes where the constructors for the datatype are explicitly
+defined by the programmer. This has a number of uses and I'll go
+through some examples in this post. GADTs are sometimes referred to as
+Guarded Recursive Datatypes.</p>
+
+<p>Some useful resources for reading up on GADTs that I used to write
+this post are:</p>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Generalized_algebraic_data_type">Wikipedia page on GADT</a></li>
+<li><a href="https://en.wikibooks.org/wiki/Haskell/GADT">Haskell/GADT Wikibook</a></li>
+<li><a href="https://wiki.haskell.org/GADTs_for_dummies">GADTs for Dummies</a></li>
+<li><a href="http://www.ats-lang.org/MYDATA/GRDT-popl03.pdf">Guarded Recursive Datatype Constructors</a></li>
+</ul>
+
+
+<p>The examples here were tested with ATS2-0.3.11.</p>
+
+<h2>Arithmetic Expressions</h2>
+
+<p>This is probably the most common demonstration of GADT usage and it's
+useful to see how to do it in ATS. The example is taken from the
+<a href="https://en.wikibooks.org/wiki/Haskell/GADT">Haskell/GADT Wikibook</a>.</p>
+
+<p>First we'll create datatype to represent a simple expression language,
+and write an evaluation function for it, without using GADTs:</p>
+
+<pre><code>#include "share/atspre_define.hats"
+#include "share/atspre_staload.hats"
+
+datatype Expr  =
+  | I of int
+  | Add of (Expr, Expr)
+  | Mul of (Expr, Expr)
+
+fun eval (x:Expr): int =
+  case+ x of
+  | I i =&gt; i
+  | Add (t1, t2) =&gt; eval(t1) + eval(t2)
+  | Mul (t1, t2) =&gt; eval(t1) * eval(t2)
+
+
+implement main0() = let
+  val term = Mul(I(2), I(4))
+  val res = eval(term)
+in
+  println!("res=", res)
+end
+</code></pre>
+
+<p><code>Expr</code> is a datatype with three constructors. <code>I</code> represents an
+integer, <code>Add</code> adds two expressions together and <code>Mul</code> multiples two
+expressions. The <code>eval</code> function pattern matches on these and
+evaluates them. The example can be compiled with the following if
+placed in a file <code>arith1.dats</code>:</p>
+
+<pre><code>$ patscc -DATS_MEMALLOC_LIBC -o arith1 arith1.dats
+$ ./arith1
+res=8
+</code></pre>
+
+<p>Now we extend the expression language with another type, booleans, and
+add an <code>Expr</code> constructor to compare for equality:</p>
+
+<pre><code>datatype Expr  =
+  | I of int
+  | B of bool
+  | Add of (Expr, Expr)
+  | Mul of (Expr, Expr)
+  | Eq of (Expr, Expr)
+
+(* Does not typecheck *)
+fun eval (x:Expr): int =
+  case+ x of
+  | I i =&gt; i
+  | B b =&gt; b
+  | Add (t1, t2) =&gt; eval(t1) + eval(t2)
+  | Mul (t1, t2) =&gt; eval(t1) * eval(t2)
+  | Eq (t1, t2) =&gt; eval(t1) = eval(t2)
+</code></pre>
+
+<p>This code fails to typecheck - the <code>eval</code> function is defined to
+return an <code>int</code> but the <code>B b</code> pattern match returns a boolean. We can
+work around this by making the result value of <code>eval</code> return a
+datatype that can represent either an <code>int</code> or a <code>bool</code> but then we
+have to add code throughout <code>eval</code> to detect the invalid addition or
+multiplication of a boolean and raise a runtime error. Ideally we'd
+like to have make it impossible to construct invalid expressions such
+that they error out at compile time.</p>
+
+<p>We can imagine the type constructors for <code>Expr</code> as if they were
+functions with a type signature. The type signature of the
+constructors would be:</p>
+
+<pre><code>fun I(n:int): Expr
+fun B(b:bool): Expr
+fun Add(t1:Expr, t2:Expr): Expr
+fun Mul(t1:Expr, t1:Expr): Expr
+fun Eq(t1:Expr, t2:Expr): Expr
+</code></pre>
+
+<p>The problem here is that <code>Add</code> and <code>Mul</code> both take <code>Expr</code> as arguments
+but we want to restrict them to integer expressions only - we need to
+differentiate between integer and boolean expressions. We'd like to
+add a type index to the <code>Expr</code> datatype that indicates if it is a
+boolean or an integer expression and change the constructors so they
+have types like:</p>
+
+<pre><code>fun I(n:int): Expr int
+fun B(b:bool): Expr bool
+fun Add(t1:Expr int, t2:Expr int): Expr int
+fun Mul(t1:Expr int, t1:Expr int): Expr int
+fun Eq(t1:Expr int, t2:Expr int): Expr bool
+</code></pre>
+
+<p>Using these constructors would make it impossible to create an
+expression that would give a runtime error in an <code>eval</code>
+function. Creating an <code>Expr</code> with a type index looks like:</p>
+
+<pre><code>datatype Expr(a:t@ype)  =
+  | I(a) of int
+  | B(a) of bool
+  | Add(a) of (Expr int, Expr int)
+  | Mul(a) of (Expr int, Expr int)
+  | Eq(a) of (Expr int, Expr int)
+</code></pre>
+
+<p>This adds a type index of sort <code>t@ype</code>. A 'sort' in ATS is the type of
+type indexes. The <code>t@ype</code> is for types that have a flat memory
+structure of an unknown size. The '@' sigil looks odd inside the name,
+but '@' is used elsewhere in ATS when defining flat records and tuples
+which is a useful mnemonic for remembering what the '@' within the
+sort name means.</p>
+
+<p>This doesn't help our case though as the type signatures for the
+constructors would be:</p>
+
+<pre><code>fun I(n:int): Expr a
+fun B(b:bool): Expr a
+fun Add(t1:Expr int, t2:Expr int): Expr a
+fun Mul(t1:Expr int, t1:Expr int): Expr a
+fun Eq(t1:Expr int, t2:Expr int): Expr a
+</code></pre>
+
+<p>There is still the problem that an <code>Expr a</code> is not an <code>Expr int</code> for
+<code>Add</code>, <code>Mul</code> and <code>Eq</code>, and requiring runtime errors when pattern
+matching. This is where GADTs come in. GADTs enable defining a
+datatype that provides constructors where the generic <code>a</code> of the type
+index can be constrained to a specific type, different for each
+constructor. The <code>Expr</code> datatype becomes:</p>
+
+<pre><code>datatype Expr(t@ype)  =
+  | I(int) of int
+  | B(bool) of bool
+  | Add(int) of (Expr int, Expr int)
+  | Mul(int) of (Expr int, Expr int)
+  | Eq(bool) of (Expr int, Expr int)
+</code></pre>
+
+<p>The constructor type signature now match those that we wanted earlier
+and it becomes possible to check at compile time for invalid
+expressions. The <code>eval</code> functions looks similar, but is parameterized
+over the type index:</p>
+
+<pre><code>fun{a:t@ype} eval(x:Expr a): a =
+  case+ x of
+  | I i =&gt; i
+  | B b =&gt; b
+  | Add (t1, t2) =&gt; eval(t1) + eval(t2)
+  | Mul (t1, t2) =&gt; eval(t1) * eval(t2)
+  | Eq (t1, t2) =&gt; eval(t1) = eval(t2)
+</code></pre>
+
+<p>The "<code>{a:t@ype}</code>" syntax following <code>fun</code> is ATS' way of defining a
+function template where <code>a</code> is the template argument. ATS will
+generate a new function specific for each <code>a</code> type used in the
+program.</p>
+
+<p>An example <code>main</code> function to demonstrate the new GADT enabled <code>Expr</code>
+and <code>eval</code>:</p>
+
+<pre><code>implement main0() = let
+  val term1 = Eq(I(5), Add(I(1), I(4)))
+  val term2 = Mul(I(2), I(4))
+  val res1 = eval(term1)
+  val res2 = eval(term2)
+in
+  println!("res1=", res1, " and res2=", res2)
+end
+
+$ patscc -DATS_MEMALLOC_LIBC -o arith2 arith2.dats
+$ ./arith2
+res1=true and res2=8
+</code></pre>
+
+<p>You may have noticed that our <code>Expr</code> type can't represent equality
+between booleans, or between booleans and integers. It's defined to
+only allow equality between integers. It's possible to make equality
+polymorphic but I'll go through this later as it brings up some more
+complicated edge cases in types with ATS beyond just using GADTs.</p>
+
+<h2>Typesafe sprintf</h2>
+
+<p>This example of GADT usage in ATS tries to implement a <code>sprintf</code>
+function that allows providing a format specification to <code>sprintf</code>
+which then processes it and accepts arguments of types as defined by
+the format specification.</p>
+
+<p>The format specification is defined as a GADT:</p>
+
+<pre><code>datatype Format (a:type) =
+  | I(int -&lt;cloref1&gt; a) of (Format a)
+  | S_(a) of (string, Format a)
+  | S0(string) of string
+</code></pre>
+
+<p>Each constructor represents part of a format string. The type index is the type that <code>sprintf</code> will return given a format string for that type. <code>sprintf</code> is declared as:</p>
+
+<pre><code>fun sprintf {a:type} (fmt: Format a): a
+</code></pre>
+
+<p>Here are some example invocations and the types that should result:</p>
+
+<pre><code>// Returns a string
+sprintf (S0 "hello")
+
+// Returns a string
+sprintf (S_ ("hello", S0 "world"))
+
+// Returns a function that takes an int and returns a string
+sprintf (I (S0 "&lt;- is a number"))
+</code></pre>
+
+<p>The last example shows how <code>sprintf</code> emulates variable arguments using closures. By returning a function any immediately following tokens are treated as arguments to that function. For example:</p>
+
+<pre><code>sprintf (I (S0 "&lt;- is a number")) 42
+(int -&gt; string) 42
+</code></pre>
+
+<p>With some syntactic sugar using currying we can make this look
+nicer. <a href="http://ats-lang.sourceforge.net/DOCUMENT/INT2PROGINATS/HTML/x892.html">Curried functions</a>
+is a feature that isn't often used in ATS as it requires the garbage
+collector (to clean up partially curried functions) and performance is
+diminished due to the allocation of closures but it's useful for this example.</p>
+
+<p>With the <code>Format</code> datatype defined, here's the implementation of <code>sprintf</code>:</p>
+
+<pre><code>fun sprintf {a:type} (fmt: Format a): a = let
+  fun aux {a:type}(pre: string, fmt': Format a): a =
+    case fmt' of
+    | I fmt =&gt; (lam (i) =&gt; aux(append(pre, int2string(i)), fmt))
+    | S_ (s, fmt) =&gt; aux(append(pre, s), fmt)
+    | S0 s =&gt; append(pre, s)
+in
+  aux("", fmt)
+end
+</code></pre>
+
+<p>It uses an inner function, <code>aux</code>, that does the work of deconstructing the format argument and returning a closure when needed, and appending strings as the result string is computed. For this example I'm cheating with memory management to keep the focus on GADT, and off dealing with the intricacies of linear strings. The example should be run with the garbage collector to free the allocated strings.</p>
+
+<p>Here's an example of executing what we have so far:</p>
+
+<pre><code>implement main0() = let
+  val fmt = S_ ("X: ", (I (S_ (" Y: ", (I (S0 ""))))))
+  val s = sprintf fmt 5 10
+in
+  println!(s)
+end
+
+$ ./format
+X: 5 Y: 10
+</code></pre>
+
+<p>The format string is pretty ugly though. Some helper functions make it a bit more friendly:</p>
+
+<pre><code>fun Str {a:type} (s: string) (fmt: Format a) = S_ (s, fmt)
+fun Int {a:type} (fmt: Format a) = I (fmt)
+fun End (s:string) = S0 (s)
+
+infixr 0 &gt;:
+macdef &gt;: (f, x) = ,(f) ,(x)
+</code></pre>
+
+<p>Now the format definition is:</p>
+
+<pre><code>val fmt = Str "X: " &gt;: Int &gt;: Str " Y: " &gt;: Int &gt;: End ""
+</code></pre>
+
+<p>The string handling functions that I threw together to append strings and convert an integer to a string without dealing with linear strings follow.</p>
+
+<pre><code>fun append(s0: string, s1: string): string = let
+  extern castfn from(s:string):&lt;&gt; Strptr1
+  extern castfn to(s:Strptr0):&lt;&gt; string
+  extern prfun drop(s:Strptr1):&lt;&gt; void
+  val s0' = from(s0)
+  val s1' = from(s1)
+  val r = strptr_append(s0', s1')
+  prval () = drop(s0')
+  prval () = drop(s1')
+in
+  to(r)
+end
+
+fun int2string(x: int): string =
+  tostring(g0int2string x) where {
+    extern castfn tostring(Strptr0):&lt;&gt; string
+  }
+</code></pre>
+
+<h2>Issues</h2>
+
+<p>These example of GADT usage were pulled from the papers and articles mentioned at the beginning of the post. They were written for Haskell or Dependent ML (a predecessor to ATS). There may be better ways of approaching the problem in ATS and some constraints on the way ATS generates C code limits how GADTs can be used. One example of the limitation was mentioned in the first example of the expression evaluator.</p>
+
+<p>If the <code>Expr</code> datatype is changed so that <code>Eq</code> can work on any type, not just <code>int</code>, then a compile error results:</p>
+
+<pre><code>datatype Expr(a:t@ype)  =
+  | I(a) of int
+  | B(a) of bool
+  | Add(a) of (Expr int, Expr int)
+  | Mul(a) of (Expr int, Expr int)
+  | Eq(a) of (Expr a, Expr a)
+</code></pre>
+
+<p>The error occurs due to the <code>Eq</code> branch in the case statement in <code>eval</code>:</p>
+
+<pre><code>fun{a:t@ype} eval(x:Expr a): a =
+  case+ x of
+  | I i =&gt; i
+  | B b =&gt; b
+  | Add (t1, t2) =&gt; eval(t1) + eval(t2)
+  | Mul (t1, t2) =&gt; eval(t1) * eval(t2)
+  | Eq (t1, t2) =&gt; eval(t1) = eval(t2)
+</code></pre>
+
+<p>The compiler is unable to find a match for the overloaded <code>=</code> call for the general case of any <code>a</code> (vs the specific case of <code>int</code> as it was before). This is something <a href="https://bluishcoder.co.nz/2011/10/19/overloading-functions-in-ats.html">I've written about before</a> and the workaround in that post gets us past that error:</p>
+
+<pre><code>extern fun{a:t@ype} equals(t1:a, t2:a): bool
+implement equals&lt;int&gt;(t1,t2) = g0int_eq(t1,t2)
+implement equals&lt;bool&gt;(t1,t2) = eq_bool0_bool0(t1,t2)
+
+fun{a:t@ype} eval(x:Expr a): a =
+  case+ x of
+  | I i =&gt; i
+  | B b =&gt; b
+  | Add (t1, t2) =&gt; eval(t1) + eval(t2)
+  | Mul (t1, t2) =&gt; eval(t1) * eval(t2)
+  | Eq (t1, t2) =&gt; equals(eval(t1), eval (t2))
+</code></pre>
+
+<p>Now the program typechecks but fails to compile the generated C code. This can usually be resolved by explicitly stating the template parameters in template function calls:</p>
+
+<pre><code>fun{a:t@ype} eval(x:Expr a): a =
+  case+ x of
+  | I i =&gt; i
+  | B b =&gt; b
+  | Add (t1, t2) =&gt; eval&lt;int&gt;(t1) + eval&lt;int&gt;(t2)
+  | Mul (t1, t2) =&gt; eval&lt;int&gt;(t1) * eval&lt;int&gt;(t2)
+  | Eq (t1, t2) =&gt; equals&lt;?&gt;(eval&lt;?&gt;(t1), eval&lt;?&gt;(t2))
+</code></pre>
+
+<p>The problem here is what types to put in the '<code>?</code>' in this snippet? The <code>Expr</code> type defines this as being any <code>a</code> but we want to constrain it to the index used by <code>t1</code> and <code>t2</code> but I don't think ATS allows us to declare that. <a href="https://groups.google.com/forum/#!topic/ats-lang-users/fIjL6bpAGno">This mailing list thread</a> discusses the issue with some workarounds.</p>
+
+      <div>Tags: 
+        
+          <a href="./tags/ats/index.html">ats</a>&nbsp;
+        
+      </div>
+      </div>
+      <hr>
+    </div>
+  
+    <div class="post">
+      <div class="span-2"><p class="small-heading">2018-09-24</p></div>
+      <div class="span-18 last">
+      <h2 class="post-title"><a href="././2018/09/24/concurrent-and-distributed-programming-in-web-prolog.html">Concurrent and Distributed Programming in Web Prolog</a></h2>
+      <p><a href="http://www.swi-prolog.org/">SWI Prolog</a> is an open source Prolog implementation with good documentation and many interesting libraries. One library that was published recently is <a href="https://github.com/Web-Prolog/swi-web-prolog/">Web Prolog</a>. While branded as a 'Web Logic Programming Language' the implementation in the github repository runs under SWI Prolog and adds <a href="https://www.erlang.org/">Erlang</a> style distributed concurrency. There is a <a href="https://github.com/Web-Prolog/swi-web-prolog/raw/master/book/web-prolog.pdf">PDF Book</a> in the repository that goes into detail about the system. In this post I explore some of features.</p>
+
+<h2>Install SWI Prolog</h2>
+
+<p>The first step is to install and run the SWI Prolog development version. There is <a href="http://www.swi-prolog.org/build/">documentation on this</a> but the following are the basic steps to download and build from the SWI Prolog github repository:</p>
+
+<pre><code>$ git clone https://github.com/SWI-Prolog/swipl-devel
+$ cd swipl-devel
+$ ./prepare
+... answer yes to the various prompts ...
+$ cp build.tmpl build
+$ vim build
+...change PREFIX to where you want to install...
+$ make install
+$ export PATH=&lt;install location&gt;/bin:$PATH
+</code></pre>
+
+<p>There may be errors about building optional libraries. They can be ignored or <a href="http://www.swi-prolog.org/build/Debian.html">view dependancies</a> to see how to install.</p>
+
+<p>The newly installed SWI Prolog build can be run with:</p>
+
+<pre><code>$ swipl
+Welcome to SWI-Prolog (threaded, 64 bits, version 7.7.19-47-g4c3d70a09)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit http://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+?- 
+</code></pre>
+
+<p>I recommend reading <a href="https://www.metalevel.at/prolog/concepts">Basic Concepts</a> in <a href="https://www.metalevel.at/prolog">The Power of Prolog</a> to get a grasp of Prolog syntax if you're not familiar with it.</p>
+
+<h2>Starting a Web Prolog node</h2>
+
+<p>Installing the Web Prolog libraries involves cloning the github repository and loading the prolog libraries held within. The system includes a web based tutorial and IDE where each connected web page is a web prolog node that can send and receive messages to other web prolog nodes. I'll beiefly mention this later but won't cover it in detail in this post - for now some simple examples will just use the SWI Prolog REPL. We'll need two nodes running, which can be done by running on different machines. On each machine run:</p>
+
+<pre><code>$ git clone https://github.com/Web-Prolog/swi-web-prolog/
+$ cd swi-web-prolog
+$ swipl
+...
+?- [web_prolog].
+...
+</code></pre>
+
+<p>The <code>[web_prolog].</code> command at the prolog prompt loads the web prolog libraries. Once loaded we need to instantiate a node, which starts the socket server and machinery that handles messaging:</p>
+
+<pre><code>?- node.
+% Started server at http://localhost:3060/
+true.
+</code></pre>
+
+<p>This starts a node on the default port <code>3060</code>. If you're running multiple nodes on the same machine you can change the port by passing an argument to <code>node</code>:</p>
+
+<pre><code>?- node(localhost:3061).
+% Started server at http://localhost:3061/
+true.
+</code></pre>
+
+<p>In the rest of this post I refer to node <code>A</code> and node <code>B</code> for the two nodes started above.</p>
+
+<h2>Basic example</h2>
+
+<p>Each process has an id that can be used to reference it. It is obtained via <code>self</code>:</p>
+
+<pre><code>?- self(Self).
+Self = thread(1)@'http://localhost:3061'.
+</code></pre>
+
+<p>We can send a message using '<code>!</code>'. Like Erlang, it takes a process to send to and the data to send:</p>
+
+<pre><code>?- self(Self),
+   Self ! 'Hello World'.
+</code></pre>
+
+<p>This posts 'Hello World' to the current process mailbox. Messages can be received using <code>receive</code>. This takes a series of patterns to match against and code to run if an item in the process mailbox matches that pattern. Like Erlang it is a selective receive - it will look through messages in the mailbox that match the pattern, not just the topmost message:</p>
+
+<pre><code>?- receive({ M -&gt; writeln(M) }).
+Hello World
+M = 'Hello World'.
+</code></pre>
+
+<p>Notice the <code>receive</code> rules are enclosed in '<code>{ ... }</code>' and are comprised of a pattern to match against and the code to run separated by <code>-&gt;</code>. Variables in the pattern are assigned the value of what they match. In this case <code>M</code> is set to <code>Hello World</code> as that's the message we sent earlier. More complex patterns are possible:</p>
+
+<pre><code>?- $Self ! foo(1, 2, bar('hi', [ 'a', 'b', 'c' ])).
+Self = thread(1)@'http://localhost:3061'.
+
+?- receive({ foo(A, B, bar(C, [D | E])) -&gt; true }).
+A = 1,
+B = 2,
+C = hi,
+D = a,
+E = [b, c].
+</code></pre>
+
+<p>Here I make use of a feature of the SWI Prolog REPL - prefixing a variable with <code>$</code> will use the value that was assigned to that variable in a previous REPL command. This also shows matching on the head and tail of a list with the <code>[Head | Tail]</code> syntax.</p>
+
+<p>To send to another process we just need to use the process identifier. In this case I can send a message from node A to node B:</p>
+
+<pre><code># In Node A
+?- self(Self).
+Self = thread(1)@'http://localhost:3060'.
+
+# This call blocks
+?- receive({ M -&gt; format('I got: ~s~n', [M])}).
+
+# In Node B
+?- thread(1)@'http://localhost:3060' ! 'Hi World'.
+true.
+
+# Node A unblocks
+I got: Hi World
+M = 'Hi World'.
+</code></pre>
+
+<h2>Spawning processes</h2>
+
+<p>Use <code>spawn</code> to spawn a new process the runs concurrencly on a node. It will have its own process Id:</p>
+
+<pre><code>?- spawn((self(Self),
+          format('My process id is ~w~n', [Self]))).
+true.
+My process id is 21421552@http://localhost:3060
+</code></pre>
+
+<p>The code to run in the process is passed as the first argument to <code>spawn</code> and must be between brackets. An optional second argument will provide the process id to the caller:</p>
+
+<pre><code>?- spawn((self(Self),
+          format('My process id is ~w~n', [Self])),
+         Pid).
+My process id is 33869438@http://localhost:3060
+Pid = '33869438'.
+</code></pre>
+
+<p>A third argument can be provided to pass options to control spawning. These include the ability to link processes, monitor them or register a name to identify it in a registry.</p>
+
+<p>Using the REPL we can define new rules and run them in processes, either by consulting a file, or entering them via <code>[user]</code>. The following code will define the code for a 'ping' server process:</p>
+
+<pre><code>server :-
+   receive({
+     ping(Pid) -&gt; Pid ! pong, server
+   }).
+</code></pre>
+
+<p>This can be added to a file and loaded in the REPL with <code>consult</code>, or it can be entered directly using <code>[user]</code> (note the use of Ctrl+D to exit the user input):</p>
+
+<pre><code># on Node A 
+?- [user].
+|: server :-
+|:   receive({
+|:     ping(Pid) -&gt; Pid ! pong, server
+|:   }).
+|: ^D
+% user://1 compiled 0.01 sec, 1 clauses
+true.
+</code></pre>
+
+<p><code>server</code> blocks receiving messages looking for a <code>ping(Pid)</code> message. It sends a <code>pong</code> message back to the process id it extracted from the message and calls itself recursively using a tail call. Run on the node with:</p>
+
+<pre><code># on node A
+?- spawn((server), Pid).
+Pid = '18268992'.
+</code></pre>
+
+<p>Send a message from another node by referencing the Pid along with the nodes address:</p>
+
+<pre><code># on node B
+?- self(Self), 18268992@'http://localhost:3060' ! ping(Self).
+Self = thread(1)@'http://localhost:30601.
+
+?- flush.
+% Got pong
+true.
+</code></pre>
+
+<p>The <code>flush</code> call will remove all messages from the process' queue and display them. In this case, the <code>pong</code> reply from the other nodes server.</p>
+
+<h2>Spawning on remote nodes</h2>
+
+<p>Web Prolog provides the ability to spawn processes to run on remote nodes. This is done by passing a <code>node</code> option to <code>spawn</code>. To demonstrate, enter the following to create an <code>add</code> rule in node A:</p>
+
+<pre><code># on node A
+?- [user].
+|: add(X,Y,Z) :- Z is X + Y.
+|: ^D
+% user://1 compiled 0.01 sec, 1 clauses
+true.
+</code></pre>
+
+<p>This creates an 'add' predicate that works as follows:</p>
+
+<pre><code># on node A
+?- add(1,2,Z).
+Z = 3.
+</code></pre>
+
+<p>We can call this predicate from node B by spawning a remote process that executes code in node A. In node B, it looks like this:</p>
+
+<pre><code># on node B
+?- self(Self),
+   spawn((
+     call(add(10, 20, Z)),
+     Self ! Z
+   ), Pid, [
+     node('http://localhost:3060'),
+     monitor(true)
+   ]),
+   receive({ M -&gt; format('Result is ~w~n', [M])})
+Result is 30
+Self = thread(1)@'http://localhost:3061',
+Pid = '24931627'@'http://localhost:3060',
+M = 30.
+</code></pre>
+
+<p>Passing <code>node</code> as an option to <code>spawn/3</code> results in a process being spawned on that referenced node and the code runs there. In the code we call the <code>add</code> predicate that only exists on node A and return it by sending it to node B's identifier. The <code>monitor</code> option provides status information about the remote process - including getting a message when the process exits. Calling <code>flush</code> on node B shows that the process on node A exits:</p>
+
+<pre><code># on Node B
+?- flush.
+% Got down('24931627'@'http://localhost:3060',exit)
+true.
+</code></pre>
+
+<p>Note the indirection in the <code>spawn</code> call where <code>add</code> isn't called directly, instead <code>call</code> is used to call it. For some reason Web Prolog requires <code>add</code> to exist on node B even though it is not called. The following gives an error on node B for example:</p>
+
+<pre><code># on node B
+?- self(Self),
+   spawn((
+     add(10, 20, Z),
+     Self ! Z
+   ), Pid, [
+     node('http://localhost:3060'),
+     monitor(true)
+   ]),
+   receive({ M -&gt; format('Result is ~w~n', [M])})
+ERROR: Undefined procedure: add/3 (DWIM could not correct goal)
+</code></pre>
+
+<p>I'm unsure if this is an error in web prolog or something I'm doing.</p>
+
+<h2>RPC calls</h2>
+
+<p>The previous example can be simplified using RPC functions provided by web prolog. A synchronous RPC call from node B can be done that is aproximately equivalent to the above:</p>
+
+<pre><code>?- rpc('http://localhost:3060', add(1,2,Z)).
+Z = 3.
+</code></pre>
+
+<p>Or ansynchronously using promises:</p>
+
+<pre><code>?- promise('http://localhost:3060', add(1,2,Z), Ref).
+Ref = '119435902516515459454946972679206500389'.
+
+?- yield($Ref, Answer).
+Answer = success(anonymous, [add(1, 2, 3)], false),
+Ref = '119435902516515459454946972679206500389'.
+</code></pre>
+
+<h2>Upgrading a process</h2>
+
+<p>The following example, based on <a href="https://bluishcoder.co.nz/2016/07/14/concurrency-in-wasp-lisp.html">one I did for Wasp Lisp</a>, is a process that maintains a count that can be incremented, decremented or retrieved:</p>
+
+<pre><code>server(Count) :-
+  receive({
+    inc -&gt; Count2 is Count + 1, server(Count2);
+    dec -&gt; Count2 is Count - 1, server(Count2);
+    get(Pid) -&gt; Pid ! value(Count), server(Count)
+  }).
+</code></pre>
+
+<p>Once defined, it can be spawned in node A with:</p>
+
+<pre><code>?- spawn((server(0)), Pid).
+Pid = '33403644'.
+</code></pre>
+
+<p>And called from Node B with code like:</p>
+
+<pre><code>?- self(Self), 33403644@'http://localhost:3060' ! get(Self).
+Self = thread(1)@'http://localhost:3061'.
+
+?- flush.
+% Got value(0)
+true.
+
+?- 33403644@'http://localhost:3060' ! inc.
+true.
+
+?- self(Self), 33403644@'http://localhost:3060' ! get(Self).
+Self = thread(1)@'http://localhost:3061'.
+
+?- flush.
+% Got value(1)
+true.
+</code></pre>
+
+<p>We can modify the server so it accepts an <code>upgrade</code> message that contains the new code that the server will execute:</p>
+
+<pre><code>server(Count) :-
+  writeln("server receive"),
+  receive({
+    inc -&gt; Count2 is Count + 1, server(Count2);
+    dec -&gt; Count2 is Count - 1, server(Count2);
+    get(Pid) -&gt; Pid ! value(Count), server(Count);
+    upgrade(Pred) -&gt; writeln('upgrading...'), call(Pred, Count)
+  }).
+</code></pre>
+
+<p>Run the server and send it some messages. Then define a <code>new_server</code> on node A's REPL:</p>
+
+<pre><code>new_server(Count) :-
+  writeln("new_server receive"),
+  receive({
+    inc -&gt; Count2 is Count + 1, new_server(Count2);
+    dec -&gt; Count2 is Count - 1, new_server(Count2);
+    mul(X) -&gt; Count2 is Count * X, new_server(Count2);
+    get(Pid) -&gt; Pid ! value(Count), new_server(Count);
+    upgrade(Pred) -&gt; writeln(Pred), writeln(Count), call(Pred, Count)
+  }).
+</code></pre>
+
+<p>And send an <code>upgrade</code> message to the existing server:</p>
+
+<pre><code># on node A
+?- $Pid ! upgrade(new_server).
+upgrading...
+new_server receive
+</code></pre>
+
+<p>Now the server understands the <code>mul</code> message without having to be shut down and restarted.</p>
+
+<h2>Web IDE and tutorial</h2>
+
+<p>There's a web based IDE and tutorial based on <a href="https://swish.swi-prolog.org/">SWISH</a>, the online SWI-Prolog system. To start this on a local node, run the following script from the web prolog source:</p>
+
+<pre><code>$ cd web-client
+$ swipl run.pl
+</code></pre>
+
+<p>Now visit <code>http://localhost:3060/apps/swish/index.html</code> in a web browser. This displays a tutorial on the left and a REPL on the right. Each loaded web page has its own namespace and local environment. You can send messages to and from individual web pages and the processes running in the local node. It uses websockets to send data to and from instances.</p>
+
+<h2>Conclusion</h2>
+
+<p>There's a lot to the Web Prolog system and the implementation for SWI Prolog has some rough edges but it's usable to experiment with and get a feel for the system. I hope to write a more about some of the features of it, and SWI Prolog, as I get more familiar with it.</p>
+
+      <div>Tags: 
+        
+          <a href="./tags/prolog/index.html">prolog</a>&nbsp;
+        
+      </div>
+      </div>
+      <hr>
+    </div>
+  
+<div>
+  
+    <a class="pagination" href="./page2/index.html" title="older">&larr; Older</a>
+  
+  
+</div>
+
+      <hr>
+      <div class="span-20">
+        <p style="text-align:center">This site is accessable over tor as hidden service <a href="http://mh7mkfvezts5j6yu.onion/">mh7mkfvezts5j6yu.onion</a>, or
+        Freenet using key:<br><small><strong>USK@1ORdIvjL2H1bZblJcP8hu2LjjKtVB-rVzp8mLty~5N4,8hL85otZBbq0geDsSKkBK4sKESL2SrNVecFZz9NxGVQ,AQACAAE/bluishcoder/-61/</strong></small></p>
+        <hr>
+      </div>
+    </div>
+    <div class="span-4 last">
+      <div class="small-heading">Tags</div>
+      <div class="span-4 tags">
+         
+         <div class="span-3"><a href="./tags/3move/index.html">3move</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/acme/index.html">acme</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/ada/index.html">ada</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/ajax/index.html">ajax</a></div>
+         <div class="span-1 last">7</div>
+         
+         <div class="span-3"><a href="./tags/alice/index.html">alice</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/aliceml/index.html">aliceml</a></div>
+         <div class="span-1 last">2</div>
+         
+         <div class="span-3"><a href="./tags/ats/index.html">ats</a></div>
+         <div class="span-1 last">32</div>
+         
+         <div class="span-3"><a href="./tags/audio/index.html">audio</a></div>
+         <div class="span-1 last">2</div>
+         
+         <div class="span-3"><a href="./tags/b2g/index.html">b2g</a></div>
+         <div class="span-1 last">4</div>
+         
+         <div class="span-3"><a href="./tags/backbase/index.html">backbase</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/bitcoin/index.html">bitcoin</a></div>
+         <div class="span-1 last">3</div>
+         
+         <div class="span-3"><a href="./tags/bjj/index.html">bjj</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/blackdog/index.html">blackdog</a></div>
+         <div class="span-1 last">3</div>
+         
+         <div class="span-3"><a href="./tags/commonlisp/index.html">commonlisp</a></div>
+         <div class="span-1 last">10</div>
+         
+         <div class="span-3"><a href="./tags/concurrency/index.html">concurrency</a></div>
+         <div class="span-1 last">4</div>
+         
+         <div class="span-3"><a href="./tags/continuations/index.html">continuations</a></div>
+         <div class="span-1 last">10</div>
+         
+         <div class="span-3"><a href="./tags/cyclone/index.html">cyclone</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/dojo/index.html">dojo</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/eee/index.html">eee</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/erlang/index.html">erlang</a></div>
+         <div class="span-1 last">20</div>
+         
+         <div class="span-3"><a href="./tags/facebook/index.html">facebook</a></div>
+         <div class="span-1 last">2</div>
+         
+         <div class="span-3"><a href="./tags/factor/index.html">factor</a></div>
+         <div class="span-1 last">61</div>
+         
+         <div class="span-3"><a href="./tags/firefox/index.html">firefox</a></div>
+         <div class="span-1 last">6</div>
+         
+         <div class="span-3"><a href="./tags/flash/index.html">flash</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/forth/index.html">forth</a></div>
+         <div class="span-1 last">2</div>
+         
+         <div class="span-3"><a href="./tags/freenet/index.html">freenet</a></div>
+         <div class="span-1 last">5</div>
+         
+         <div class="span-3"><a href="./tags/fxos/index.html">fxos</a></div>
+         <div class="span-1 last">4</div>
+         
+         <div class="span-3"><a href="./tags/git/index.html">git</a></div>
+         <div class="span-1 last">6</div>
+         
+         <div class="span-3"><a href="./tags/gstreamer/index.html">gstreamer</a></div>
+         <div class="span-1 last">5</div>
+         
+         <div class="span-3"><a href="./tags/happs/index.html">happs</a></div>
+         <div class="span-1 last">2</div>
+         
+         <div class="span-3"><a href="./tags/haskell/index.html">haskell</a></div>
+         <div class="span-1 last">14</div>
+         
+         <div class="span-3"><a href="./tags/hyperscope/index.html">hyperscope</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/inferno/index.html">inferno</a></div>
+         <div class="span-1 last">8</div>
+         
+         <div class="span-3"><a href="./tags/io/index.html">io</a></div>
+         <div class="span-1 last">2</div>
+         
+         <div class="span-3"><a href="./tags/javascript/index.html">javascript</a></div>
+         <div class="span-1 last">36</div>
+         
+         <div class="span-3"><a href="./tags/jlang/index.html">jlang</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/links/index.html">links</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/martialarts/index.html">martialarts</a></div>
+         <div class="span-1 last">4</div>
+         
+         <div class="span-3"><a href="./tags/mercury/index.html">mercury</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/minix/index.html">minix</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/misc/index.html">misc</a></div>
+         <div class="span-1 last">15</div>
+         
+         <div class="span-3"><a href="./tags/mobile/index.html">mobile</a></div>
+         <div class="span-1 last">2</div>
+         
+         <div class="span-3"><a href="./tags/mozartoz/index.html">mozartoz</a></div>
+         <div class="span-1 last">2</div>
+         
+         <div class="span-3"><a href="./tags/mozilla/index.html">mozilla</a></div>
+         <div class="span-1 last">99</div>
+         
+         <div class="span-3"><a href="./tags/namecoin/index.html">namecoin</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/nanojit/index.html">nanojit</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/nixos/index.html">nixos</a></div>
+         <div class="span-1 last">3</div>
+         
+         <div class="span-3"><a href="./tags/ocaml/index.html">ocaml</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/occam/index.html">occam</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/ogg/index.html">ogg</a></div>
+         <div class="span-1 last">9</div>
+         
+         <div class="span-3"><a href="./tags/openid/index.html">openid</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/picolisp/index.html">picolisp</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/pitcairn/index.html">pitcairn</a></div>
+         <div class="span-1 last">5</div>
+         
+         <div class="span-3"><a href="./tags/poker/index.html">poker</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/pony/index.html">pony</a></div>
+         <div class="span-1 last">8</div>
+         
+         <div class="span-3"><a href="./tags/programming/index.html">programming</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/prolog/index.html">prolog</a></div>
+         <div class="span-1 last">3</div>
+         
+         <div class="span-3"><a href="./tags/pure/index.html">pure</a></div>
+         <div class="span-1 last">3</div>
+         
+         <div class="span-3"><a href="./tags/rkt/index.html">rkt</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/rust/index.html">rust</a></div>
+         <div class="span-1 last">5</div>
+         
+         <div class="span-3"><a href="./tags/scala/index.html">scala</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/scheme/index.html">scheme</a></div>
+         <div class="span-1 last">4</div>
+         
+         <div class="span-3"><a href="./tags/seaside/index.html">seaside</a></div>
+         <div class="span-1 last">6</div>
+         
+         <div class="span-3"><a href="./tags/self/index.html">self</a></div>
+         <div class="span-1 last">10</div>
+         
+         <div class="span-3"><a href="./tags/servo/index.html">servo</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/shen/index.html">shen</a></div>
+         <div class="span-1 last">3</div>
+         
+         <div class="span-3"><a href="./tags/smalltalk/index.html">smalltalk</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/spark/index.html">spark</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/tamarin/index.html">tamarin</a></div>
+         <div class="span-1 last">2</div>
+         
+         <div class="span-3"><a href="./tags/theora/index.html">theora</a></div>
+         <div class="span-1 last">5</div>
+         
+         <div class="span-3"><a href="./tags/tinyvid/index.html">tinyvid</a></div>
+         <div class="span-1 last">7</div>
+         
+         <div class="span-3"><a href="./tags/ukulele/index.html">ukulele</a></div>
+         <div class="span-1 last">4</div>
+         
+         <div class="span-3"><a href="./tags/urweb/index.html">urweb</a></div>
+         <div class="span-1 last">2</div>
+         
+         <div class="span-3"><a href="./tags/video/index.html">video</a></div>
+         <div class="span-1 last">24</div>
+         
+         <div class="span-3"><a href="./tags/vodka/index.html">vodka</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/vorbis/index.html">vorbis</a></div>
+         <div class="span-1 last">3</div>
+         
+         <div class="span-3"><a href="./tags/waspvm/index.html">waspvm</a></div>
+         <div class="span-1 last">8</div>
+         
+         <div class="span-3"><a href="./tags/webm/index.html">webm</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/yaws/index.html">yaws</a></div>
+         <div class="span-1 last">1</div>
+         
+         <div class="span-3"><a href="./tags/zeronet/index.html">zeronet</a></div>
+         <div class="span-1 last">2</div>
+         
+         <div class="span-3"><a href="./tags/zimbra/index.html">zimbra</a></div>
+         <div class="span-1 last">2</div>
+         
+      </div>
+      <hr>
+      <div class="small-heading">Archives</div>
+      <ul class="archive">
+        <li><a href="./2020/index.html">2020</a></li>
+        <li><a href="./2019/index.html">2019</a></li>
+        <li><a href="./2018/index.html">2018</a></li>
+        <li><a href="./2017/index.html">2017</a></li>
+        <li><a href="./2016/index.html">2016</a></li>
+        <li><a href="./2015/index.html">2015</a></li>
+        <li><a href="./2014/index.html">2014</a></li>
+        <li><a href="./2013/index.html">2013</a></li>
+        <li><a href="./2012/index.html">2012</a></li>
+        <li><a href="./2011/index.html">2011</a></li>
+        <li><a href="./2010/index.html">2010</a></li>
+        <li><a href="./2009/index.html">2009</a></li>
+        <li><a href="./2008/index.html">2008</a></li>
+        <li><a href="./2007/index.html">2007</a></li>
+        <li><a href="./2006/index.html">2006</a></li>
+        <li><a href="./2005/index.html">2005</a></li>
+      </ul>
+      <div class="small-heading">Links</div>
+      <ul class="archive">
+        <li><a href="./articles/index.html">Articles</a></li>
+        <li><a href="./index.html">Bluishcoder</a></li>
+        <li><a href="./radio/index.html">Radio Weblog Archive</a></li>
+      </ul>
+      <a href="./index.html"><img width=180 height=36 src="./activelink.png"/></a>
+    </div> 
+    <hr>
+    <div class="span-24 blog-footer">Copyright (c) 2010, Chris Double. All Rights Reserved.</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="onion-location" content="http://bitmailendavkbec.onion/" />
+		<meta name="google-site-verification" content="2dmlu-vawwE16Jhsjkcuz49i8dobBe27TBVMzeyRAIQ" />
+		<title>Bitmessage E-Mail Gateway</title>
+		<script type="text/javascript">
+			window.addEventListener("DOMContentLoaded",function()
+			{
+				var allowed = [
+					/^(www\.)?b[i]t[m]e[s]{2}a[g]e\.c[h]$/i,
+					/^(www\.)?[b]i[t]m[a]i[l]e[n]d[a]v[k]b[e]c\.[o]n[i]o[n]$/i
+				];
+				var valid=false;
+				for(var i=0;i<allowed.length;i++){
+					valid=valid||allowed[i].test(location.hostname);
+				}
+				if(!valid){
+					if(location.hostname.match(/\.onion$/i)){
+						document.documentElement.innerHTML=
+							"<div style=\"color:#F00;\">"+
+							"<h1>CAUTION!</h1>"+
+							"You have been tricked into using the wrong onion domain name.<br />"+
+							"Only use the official .onion name.<br />"+
+							"You can find it by visiting <a href=\"https://bitmessage.ch\">bitmessage.ch</a><br />"+
+							"There is a link on the top with the official name. "+
+							"<b>You should mistrust the source you got this domain from immediately</b>";
+					}
+					else{
+						document.documentElement.innerHTML=location.hostname+
+						" is not a valid domain for this service.<br />"+
+						"Only <a href=\"https://bitmessage.ch\">bitmessage.ch</a> is valid.";
+					}
+				}
+
+				var a=document.getElementsByTagName("span");
+				for(var b=0;b<a.length;b++)
+				{
+					if(a[b].innerHTML==="#")
+					{
+						a[b].innerHTML="@";
+					}
+				}
+			});
+		</script>
+		<link rel="stylesheet" href="/style.css" type="text/css" />
+	</head>
+	<body>
+		<h1>This service has been shut down</h1>
+		<p>
+			Contact:<br />
+			To contact me,
+			you can use <a href="https://ricochet.im/" rel="noreferer noopener nofollow" target="_blank">ricochet</a>.
+			Address: <code>ricochet:ricochetytijv2kh</code><br />
+		</p>
+		<p>
+			<i>Contact will only be provided in english</i>
+		</p>
+		<p>
+			When adding this address as a contact, leave a precise question.
+			I will occasionally check on the client and try to answer your question.
+			Note that messages are only delivered if both participants have the application running,
+			so leave it open in the background when contacting me.
+		</p>
+		<p>
+			The original termination message
+			<a href="/term.html">can be found here</a>
+		</p>
+		
+	</body>
+</html>

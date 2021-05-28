@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CS.RIN.RU - Steam Underground Community</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            text-align: center;
+            font-family: Verdana, Helvetica, Arial, sans-serif;
+            background-color: #000000;
+            color: #CCCCCC;
+        }
+
+        a {
+            color: #AAAAAA;
+        }
+
+        a:hover {
+            color: #FFFFFF;
+        }
+    </style>
+  </head>
+  <body>
+    <script>
+    window.onload = function() {
+        var newURL = location.href;
+        // Tor2web
+        if ((location.hostname.indexOf("csrinru3c2ownkep") > -1 && location.hostname !== "csrinru3c2ownkep.onion") || (location.hostname.indexOf("csrinrutkb3tshptdctl5lyei4et35itl22qvk5ktdcat6aeavy6nhid") > -1 && location.hostname !== "csrinrutkb3tshptdctl5lyei4et35itl22qvk5ktdcat6aeavy6nhid.onion"))
+        {
+            location.href = "https://cs.rin.ru/forum";
+        }
+        else if (location.href.indexOf("&cookiecheck") === -1)
+        {
+            document.cookie = "csrinru_clientcheck=0; path=/; secure";
+            if (location.hash !== "")
+            {
+                newURL = newURL.replace(location.hash, "&cookiecheck" + location.hash);
+            }
+            else
+            {
+                newURL = newURL + "&cookiecheck";
+            }
+
+            location.replace(newURL);
+        }
+        else
+        {
+            var decodedCookie = decodeURIComponent(document.cookie);
+            if (decodedCookie.indexOf("csrinru_clientcheck=0") > -1)
+            {
+                document.cookie = "csrinru_clientcheck=1; path=/; secure";
+                newURL = newURL.replace("&cookiecheck","");
+                location.replace(newURL);
+            }
+            else if (decodedCookie.indexOf("csrinru_clientcheck=1") > -1)
+            {
+                location.replace(location.protocol + "//" + location.host + "/forum");
+            }
+            else
+            {
+                var p = document.createElement("p");
+                var t = document.createTextNode("Please enable cookies to browse this page.");
+                p.appendChild(t);
+                document.body.appendChild(p);
+            }
+        }
+    };
+    </script>
+    <noscript><p>Please enable Javascript to browse this page.</p></noscript>
+  </body>
+</html>

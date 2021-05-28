@@ -1,0 +1,130 @@
+<head>
+<link rel="stylesheet" type="text/css" href="/style.css">
+<title>Confidant Mail</title>
+</head><body>
+
+<div class="outergrid">
+<nav class="menubar">
+<ul>
+<li><a href="/">About</a></li>
+<li><a href="/docs/introduction.html">Intro</a></li>
+<li><a href="/download/">Download</a></li>
+<li><a href="/docs/">Docs</a></li>
+<li><a href="/wordpress/">Blog</a></li>
+<li><a href="/forums/">Forum</a></li>
+<li><a href="/acct.php">Accounts</a></li>
+</ul>
+</nav>
+
+<div class="floatright">
+<img src="/keyicon3.png" width="85" height="76" alt="CONFIDANT MAIL">
+<span class="cmlogo">CONFIDANT MAIL</span>
+<a href="https://www.gnupg.org"><img src="/gnupglogo-sm.png" alt="GNUPG"></a>
+<a href="https://www.torproject.org/"><img src="/torlogo-sm.png" alt="TOR"></a>
+<a href="https://geti2p.net/"><img src="/i2plogo-sm.png" alt="I2P"></a>
+<a href="screenshot_lg.png"><img src="screenshot_th.png" alt="Screenshot"></a>
+</div>
+
+<div class="mainbody">
+<p class="mainbody">
+Confidant Mail is an open-source non-SMTP cryptographic email system optimized
+for large file attachments. It is a secure and spam-resistant alternative to
+regular email and online file drop services. It uses GNU Privacy Guard (GPG)
+for content encryption and authentication, and TLS 1.2 with ephemeral keys for
+transport encryption.</p>
+
+<p class="mainbody">
+Confidant Mail is the easiest way to use PGP encryption. You can download and
+install the software and start using it in a few minutes.  The only information
+you have to know and type in is your name, email address, and a password. No
+complex setup is required. Your public key will be created automatically.</p>
+
+<p class="mainbody">
+<font color="#0000f0">Confidant Mail version 0.45 released 2018-09-06, with a bug fix to the Repair function for large accounts. Click to get the <a href="download">upgrade</a>.</font></p>
+
+<p class="mainbody">
+<font color="#0000f0"><a href="https://offensive-warfare.com">Offensive Warfare 2.0</a> - The Future of Cyber Warfare - Hacking and Cyber Security Community</a> - is now setting up a Confidant Mail discussion list May 2019.</font></p>
+
+<p class="mainbody">
+There is an experimental version, now being tested and available for <a href="/download/b45a/">download</a>, that uses WxPython 4.0.3, OpensSSL 1.1.1 and TLS 1.3</p>
+
+<p class="mainbody">
+Added a Wordpress <a href="/wordpress/">blog</a> on 2017-08-14, which may eventually become the main site. Right now I will be posting relevant articles.</p>
+
+<p class="mainbody">
+Tutorial May 2016: Click <a href="/slideshow/" target="_blank">Windows</a> or <a href="/slideshow-debian/" target="_blank">Linux</a> for a step-by-step screen recording showing you how to install and use Confidant Mail.</font></p>
+
+<p class="mainbody">New feature April 2016:</font> <a href="smtp_notification.html">Click here</a> to get alerts by text or regular email when new CM arrives.<br><p>
+
+<p class="mainbody"><a href="confidant_better.html">Cick here</a> to read why Confidant Mail is better than encrypted webmail.</p>
+
+<span class="headline">Features:</span>
+<ul class="headline">
+<li>All messages are encrypted and signed with GNU Privacy Guard.
+<li>The server administrator cannot read or alter your email.
+<li>Public keys are retrieved automatically using DNS or Kademlia peer-to-peer.
+<li>Passive snoopers cannot see who is communicating with whom.
+<li>Forward secrecy of messages via encryption subkey rotation
+<li>Two or more machines can access an account with automatic folder sync
+<li>Attachment length is unlimited. Sending multi-gigabyte files is easy.
+<li>Large messages are transferred in hash-checked blocks, like BitTorrent.
+<li>Positive acknowledgment of all messages confirms delivery.
+<li>Proof-of-work makes junk mail costly for the sender.
+<li>Messages can be forwarded with the cryptographic signature intact.
+<li>Sign up for a free server account, run your own server easily, or use peer-to-peer mode.
+<li>Change servers without changing your email address.
+<li>Servers are paired and replicated for high availability.
+<li>Optional TOR or I2P anonymity.
+<li>Use your existing email address. The recipient must have Confidant Mail.
+<li>Works on Windows XP/7/8, MacOS, and Linux.
+<li>Client automatic configuration makes setup easy.
+<li>Support for OpenPGP smartcard
+</ul>
+
+<span class="headline">Current status:</span>
+<ul class="headline">
+<li>SSL status: <script type="text/javascript">
+    if (window.location.protocol == "http:") {
+    document.write('<a href="https://www.confidantmail.org/"> click here to switch to SSL</a>'); } else { document.write('in use'); }
+</script>
+<li>Version 0.45 fixes the Repair function for large accounts</li>
+<li>Version 0.44 fixes some appearance issues</li>
+<li>Version 0.43 adds help window auto size and time zone in reply date</li>
+<li>Version 0.42 adds high DPI and UI improvements</li>
+<li>Version 0.41 fixes a bug in revoked subkey deletion, added Whonix support</li>
+<li>Version 0.40 fixes a bug in key refresh, and supports GPG 2.1.23</li>
+<li>Version 0.38 provides adjustable connect timeout, View Server Certs option, and UI improvements.</li>
+<li>Version 0.37 provides direct to Address Book and other user interface improvements.</li>
+<li>Version 0.36 fixes the Windows delete key in the editor, adds a Mac icon, fixes problems with Linux already-running detection, and adds recovery from corrupted data blocks.</li>
+<li>Version 0.35 with GPG 1.4.21 which fixes an important security bug</li>
+<li>Version 0.34 fixed Unicode search bug, IPv6 support
+<li>Added printing and fixed a foreign character bug (0.33)</li>
+<li>Added full text search, find button, and outbound bandwidth throttling (0.32)</li>
+<li>Added proof-of-work bypass tokens and save list column widths (0.31)</li>
+<li>Added global font size adjustment, save default font selection, fix Mac/Linux spellcheck (0.30)</li>
+<li><a href="b29ui.txt">Improved</a> editor and user interface (0.29)
+<li>Added more checking for expired remote keys (0.28)
+<li>Added key rotation for forward secrecy (0.27)
+<li>Added support for GnuPG 2.1 and ECC keys (0.27)
+<li>Added Easy Setup dialog (0.25)
+<li>Added delete and archive on view pages, fix a bug in multiple client (0.24)
+<li>Added multiple client folder sharing (0.23)
+<li>Added listserv and file server, support for Unicode username, email address, and passphrase (0.22)
+<li>Windows 7/8/10 automatic installer available
+<li>Ubuntu Linux 12.04 and 14.04 ready to run binaries available
+<li>MacOS ready to run binaries available
+<li>Server pair available for testing and light use
+<li>Email and large attachment functionality is stable
+<li>Kademlia tested to 6,144 nodes
+<li>TOR works, anonymity code is not thoroughly audited
+<li>I2P support tested successfully in v0.19
+<li>This site is also available as <a href="http://cwu7eglxcabwttzf.onion/">http://cwu7eglxcabwttzf.onion/</a>
+</ul>
+
+<p class="mainbody">Developer contact:<br>
+Mike Ingle &lt;mike@confidantmail.org&gt; d2b89e6f95e72e26e0c917d02d1847dfecfcd0c2
+</p>
+
+</div>
+</div>
+</body>

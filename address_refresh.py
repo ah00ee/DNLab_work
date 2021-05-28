@@ -23,9 +23,9 @@ def main():
     except FileExistsError:
         shutil.rmtree(path_dir)
         os.makedirs(path_dir, exist_ok=True)
-
+    
     addresses, total, new = address_list(FLAGS.input)
-
+    
     get_args(FLAGS)
     
     # html 파일 생성
@@ -38,17 +38,17 @@ def main():
     
     # hash 생성 및 업데이트
     print("Start updating hash...")
-    hash_maker(FLAGS.input, path_dir)
+    available = hash_maker(FLAGS.input, path_dir)
     
     # 수집일 갱신
     print("Start updating date...")
-    available = refresh_availability(FLAGS.input)
+    refresh_availability(FLAGS.input)
 
     # 카테고리 생성
     print("Start updating category...")
     get_category(FLAGS.input, path_dir)
 
-    print("\nFinish testing onion address\n>>>Total: '%d' | # of new address: '%d' | # of available address: '%d'"%(total, new, available))
+    print("\nFinish testing onion address\n>>>Total: %d | # of new address: %d | # of available address: %d"%(total, new, available))
     
 if __name__ == '__main__':
     import argparse
@@ -58,7 +58,7 @@ if __name__ == '__main__':
     parser.add_argument('-i', '--input', type=str, required='True',
                         help='The addresses formed database for testing')
     parser.add_argument('-o', '--output', type=str,
-                        default='/home/ahyoung/Desktop/tor-folder/final/output',
+                        default='/home/ahyoung/Desktop/tor-folder/final/demo',
                         help='The output directory for saving html files')
     parser.add_argument('-p', '--port', type=int,
                         default=9050,

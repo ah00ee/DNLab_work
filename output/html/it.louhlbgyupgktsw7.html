@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="us">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="author" content="OnionMail Project + Tramaci.org">
+	<meta name="generator" content="380 KV Fooffa Power Plant!">
+	<meta name="description" content="OnionMail the TOR encrypted Mail Server">
+	<meta name="keywords" content="privacy, tor, mail, onionmail">
+	<meta name="google-site-verification" content="f14OHxUG1pVK8GHvwj7uJ7_XTNVQMTAUvVzmHGTblAY" />
+	
+	<title>OnionMail</title>
+	
+	<link href="/css/yzebra/jquery-ui-1.9.2.custom.css" rel="stylesheet">
+	<link href="/css/global.css" rel="stylesheet">
+    	
+	<script src="/js/jquery-1.8.3.js"></script>
+	<script src="/js/jquery-ui-1.9.2.custom.js"></script>
+	<script src="/js/global.js"></script>
+	
+<script>
+
+var Set = {
+	"mantainHeight"	:	200	,
+	"tipicalHeight"	:	480	,
+	"cloudWidth"	:	1795	,
+	"cloudHeigh"	:	235	,
+	"logoWidth"	:	433	,
+	"logoHeight"	:	400	,
+	"rndSpeed"	:	5	,
+	"frameSkip"	:	2	,
+	"fps"		:	8	,
+	"maxMove"	:	0.5	,
+	"infoWidth"	:	300	,
+	"infoSpeed"	:	0.01	,
+	"AX"		:	0	,
+	"BX"            :	0	,
+	"CX"		:	0	,
+	"DX"		:	0	,
+	"infoUD"	:	0	,
+	"infoSD"	:	0	,
+	"infoSP"	:	1	,
+	"infoPath"	:	400	,
+	"infoRun"	:	true	,
+	"run"		:	false	,
+	"NPartn"	:	2	}
+	;
+
+var Cloud = [];
+
+var Info = [
+	"SSL Everywhere.",
+	"Encrypted Filesystem.",
+	"Asymmetric cryptography.",
+	"The keys are not on the server.",
+	"Federated Server.",
+	"Mail addresses without onion address.",
+	"Mail on Tor hidden service.",
+	"Integrating with PGP.",
+	"Multiple servers.",
+	"Compatible with the internet.",
+	"Self-destruction certificates.",
+	"Server with alarm.",
+	"Privacy and Anonymity.",
+	"Compatible with SMTP.",
+	"Anonymous Server POP3 / SMTP.",
+	"Antispam and blacklists.",
+	"Automatic verification of the sender.",
+	"Protection of metadata.",
+	"Deleting Files with wipe.",
+	"Spoofing time zone.",
+	"Filtering Headers.",
+	"Custom anti spam blacklist."]
+	;
+	
+var Color= [ "048" ,"084", "408" ,"448","844","484","884","488","848" ] ;
+
+	
+function GenObj(x0,id) {
+	o= {
+		"e"	:	document.getElementById(id)	,
+		"x0"	:	x0				,
+		"x"	:	0				,
+		"s"	:	0				,
+		"d"	:	0				,
+		"p"	:	0				}  
+		;
+		
+	Cloud.push( NewTarget(o) ) ;
+	}	                   
+	
+function mt_rand(ii,ff,st) {
+	var ll = ff-ii;
+	ll= Math.floor(Math.random() * ll)+ii;
+	return Math.floor(ll/st)*st;
+	}	
+	
+function NewTarget(o) {
+	o.d = mt_rand(-Set.maxMove,Set.maxMove,1);
+	o.s = mt_rand(1,Set.rndSpeed,Set.frameSkip);
+	if (o.s==0) o.s=1;
+	return o;
+	}	
+
+
+function LoopNZ() {
+	Set.tmp=null;
+	var j = Cloud.length;
+	for (var i=0;i<j;i++) {
+		var o = Cloud[i];
+		if (o.d>o.x) o.x+=o.s;
+		if (o.d<o.x) o.x-=o.s;
+		o.e.style.left = Math.ceil(o.x0+(o.x))+'px';
+		var d=Math.abs(o.d-o.x);
+		if (d<=o.s) o = NewTarget(o);
+		Cloud[i]=o;
+		}
+		
+	if (Set.tmp!=null) try {
+		clearTimeout(Set.tmp);
+		Set.tmp=null;
+		} catch(e) { Set.tmp=null; }
+	
+	InfoMove(); 
+		
+	Set.tmp=setTimeout("LoopNZ()",Set.deelay);
+	}
+
+function StartInfo() {
+	if (Set.infoE) {
+		Set.infoE.style.visibility='hidden';
+		Set.infoE.innerHTML='&nbsp;';
+		}
+	if (Set.AX>=Info.length) Set.AX=0;
+				
+	var r = Math.ceil(Math.random()*100);
+	if (r<50) Set.infoUD=1; else Set.infoUD=0;
+	r = Math.ceil(Math.random()*100); 
+	if (r>50) Set.infoSD=1; else Set.infoSD=0; 
+	
+	Set.DX = Set.infoPath;
+	Set.BX=0;
+	if (Set.infoUD==0) Set.infoE = document.getElementById('mrku'); else Set.infoE = document.getElementById('mrkd');
+	Set.infoE.innerHTML=Info[Set.AX];
+	Set.infoE.style.visibility='visible';
+	r = mt_rand(16,Set.aniH2-16,1);
+	Set.infoE.style.top=r+'px';
+	r = mt_rand(0,Color.length,1);
+	Set.infoE.style.color='#'+Color[r];
+		
+	Set.AX++;
+	}
+
+function InfoMove() {
+	Set.DX-=Set.infoSP;
+	if (Set.DX<-Set.infoPath) StartInfo();
+	var x=0;
+	if (Set.infoSD==0) x=Set.width-Set.DX; else x=Set.DX;  
+	Set.infoE.style.left=x+'px';
+	}
+
+function Resize() { 
+	if (Set.run) {
+		Start();
+		var cx=Cloud.length;
+		for (var ax=0;ax<cx;ax++) {
+			Cloud[ax].x=0;
+			Cloud[ax].y=0;
+			Cloud[ax] = NewTarget(Cloud[ax]);
+			}
+		}
+	FixSpiega();
+	}
+	
+function FixSpiega() {
+	var le = $('#logoc');
+	var lgy = parseInt(le.height()/2);
+	lgy += parseInt(Set.height/2);
+        var le = $('#infoiaten');
+        var ifo = le.height();
+        ifo = Set.height - ifo-8;
+	
+	var  hei = ifo - lgy;
+	le = document.getElementById('sottospiega');
+	le.style.fontSize='9px';
+	var obh = 9*6;
+	var y0 = ifo-obh-8;
+	var co = $("#sottoSize");
+	var coh = co.height();
+	if (y0>lgy && (y0+obh)<ifo && obj<=coh) {
+	        le.style.top = y0+"px";
+	        var w = parseInt(Set.width*0.29);
+	        var x0 = parseInt((Set.width/2)-(w/2));
+	        le.style.width=w+"px";
+	        le.style.left=x0+"px";
+		le.style.height = obh+"px";
+	        le.style.visibility="visible";
+		} else {
+		le.style.visibility="hidden";
+		}
+	}	
+	
+function Start() {
+
+	Set.width=parseInt(document.body.clientWidth);
+	Set.height=parseInt(document.body.clientHeight);
+	Set.maxMove=Math.floor( (Set.width/2) * Set.maxMove);
+	if (!Set.run) {
+		Set.deelay = Math.floor( 1000 / Set.fps) ;
+		Set.tmp=null;
+		Set.CX = Info.length;
+		
+		} else {
+		try { 
+			clearTimeout(Set.tmp); 
+			Set.tmp=null;
+			} catch(E) {}
+		}
+		
+	var h = Set.tipicalHeight;
+	if (h>(Set.height-Set.mantainHeight)) h = Set.height-Set.mantainHeight;
+	Set.aniH = h;
+	Set.aniH2 = Math.floor(h/2);
+	
+	Set.infoPath= Set.width;
+	
+	var e = document.getElementById('animain');
+	e.style.top = (Math.floor(Set.height/2)-Set.aniH2)+'px';
+	e.style.width = Set.width+'px';
+	e.style.height = Set.aniH+'px';
+	  
+	var r = Set.logoWidth/Set.logoHeight;
+	if (h>Set.logoHeight) h=Set.logoHeight;
+	var w = Math.floor(h*r);
+	e = document.getElementById('logocx');
+	e.style.width=w+'px';
+	e.style.height=h+'px';
+	
+	e = document.getElementById('logoc');
+	e.style.width=w+'px';
+	e.style.height=h+'px';
+	e.style.top='0px';
+	w = Math.floor((Set.width/2)-(w/2));
+	e.style.left=w+'px';
+		
+	e = document.getElementById('cieu');
+	e.style.width=Set.cloudWidth+'px';
+	e.style.bottom='0px';
+	
+	e = document.getElementById('cied');
+	e.style.top='0px';
+	e.style.width=Set.cloudWidth+'px';
+	
+	var oh = (Set.aniH2-2)+'px';
+	e = document.getElementById('cloudu');
+	e.style.height=oh;
+	e = document.getElementById('cieu');
+	e.style.height=oh;
+	e = document.getElementById('cieux');
+	e.style.height=oh;
+	
+	e = document.getElementById('cloudd');
+	e.style.height=oh;
+	e = document.getElementById('cied');
+	e.style.height=oh;
+	e = document.getElementById('ciedx');
+	e.style.height=oh;
+         
+        if (!Set.run) {
+		var x = Math.floor((Set.width/2)-(Set.cloudWidth/2));
+		GenObj(x,'cieu');
+		GenObj(x,'cied');
+		e = document.getElementById('mrku');
+		e.style.width=Set.infoWidth+'px';
+		e = document.getElementById('mrkd');
+		e.style.width=Set.infoWidth+'px';
+			
+		e = document.getElementById('animain');
+		e.style.visibility='visible';
+		Set.AX = mt_rand(0,Info.length-1,1);
+		StartInfo();
+		}    
+	 	
+	Set.infoSP = 1+Math.ceil(Set.width*Set.infoSpeed);	 	
+	Set.run=true;
+	Set.tmp=setTimeout("LoopNZ()",Set.deelay);
+	
+	e = document.getElementById('pwb');
+	w = Math.floor(Math.max(Set.width,Set.height)/18); 
+	if (w>110) w=110;
+	if (w<32) w=32;
+	e.style.width=(2+(2*Set.NPartn)+(Set.NPartn*w))+'px';
+	e.style.height=w+'px';
+			
+	e = document.getElementById('prmenu');
+	e.style.left='0px';
+	try { e.style.width='auto'; } catch(E) { try { e.style.width='' } catch(e) {} }
+	w = e.clientWidth;
+	var mwx = Set.width - 130;
+	if (w>mwx) {
+		w=mwx;
+		e.style.width=w+'px';
+		} 
+	x = Math.floor((Set.width/2)-(w/2));
+	e.style.left=x+'px';
+	FixSpiega();	
+}
+
+
+
+</script>
+<style type="text/css">
+	
+#mainc {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	}
+
+#cloudu { 
+	position: relative;
+	width: 100%;
+	height: 235px;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	}
+	
+#cieu { 
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	}
+	
+#cloudd { 
+	position: relative;
+	width: 100%;
+	height: 235px;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	}
+
+#cied { 
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	}
+	
+#skyline {
+	height: 4px;
+	background-color: #048;
+	overflow: hidden;
+	position: relative;
+	}
+
+#animain {
+	width: 100px;
+	height: 100px;
+	visibility: hidden;
+	position: relative;
+	overflow: hidden;
+		
+	}
+	
+#logoc {
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+	
+	}
+	
+#logocx {
+
+	}
+	
+#mrku {
+	position: absolute;
+	bottom: 8px;
+	width: 600px;
+	text-align: center;
+	font-size: 9px;
+	font-weight: bold;
+	color: #048;
+	height: 2em;
+	line-height: 2em;
+	overflow: visible;
+	left: 0px;
+	font-family: ocr,Courier New, Monospace;
+	}
+
+#mrkd {
+	position: absolute;
+	top: 8px;
+	width: 600px;
+	text-align: center;
+	font-size: 9px;
+	font-weight: bold;
+	color: #048;
+	height: 2em;
+	line-height: 2em;
+	overflow: visible;
+	left: 0px;
+	font-family: ocr,Courier New, Monospace;
+	}
+	
+#pwb {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	width: 220px;
+	height: 110px;
+	overflow: hidden;
+	}
+
+#pwb a { border: none; text-decoration: none; color: #000; }
+#pwb a * { border: none; }
+#pwb img { height: 100%; border: none; }
+#pwb img:focus { outline: 0; }
+#pwb a:focus { outline: 0; }
+            
+#dwn {
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	width: 192px;
+	height: 40px;
+	overflow: hidden;
+	line-height: 1em;
+	}
+
+#dwn a { border: none; text-decoration: none; color: #000; }
+#dwn a * { border: none; }
+#dwn img { float: left; clear: left; margin-right: 4px; }
+#dwn div {
+	font-family: ocr,Courier New, Monospace;
+	font-size: 8pt;
+	color: #000;
+	
+	}
+
+#dwn span {
+	font-size: 8px;
+	font-family: Verdana;
+	font-weight: bold;
+	color: #048;
+	}
+
+#dwn2 span {
+	font-size: 8px;
+	font-family: Verdana;
+	font-weight: bold;
+	color: #048;
+	}
+
+#dwn2 {
+	position: absolute;
+	left: 10px;
+	bottom: 50px;
+	width: 192px;
+	height: 40px;
+	overflow: hidden;
+	line-height: 1em;
+	}
+
+#dwn2 a { border: none; text-decoration: none; color: #000; }
+#dwn2 a * { border: none; }
+#dwn2 img { float: left; clear: left; margin-right: 4px; }
+#dwn2 div {
+	font-family: ocr,Courier New, Monospace;
+	font-size: 8pt;
+	color: #000;
+	
+	}
+
+#dwn3 {
+	position: absolute;
+	left: 10px;
+	bottom: 90px;
+	width: 192px;
+	height: 40px;
+	overflow: hidden;
+	}
+
+#dwn3 a { border: none; text-decoration: none; color: #000; }
+#dwn3 a * { border: none; }
+#dwn3 img { float: left; clear: left; margin-right: 4px; }
+#dwn3 div {
+	font-family: ocr,Courier New, Monospace;
+	font-size: 8pt;
+	color: #000;
+	
+	}
+
+#dwn4 {
+	position: absolute;
+	left: 10px;
+	bottom: 130px;
+	width: 192px;
+	height: 40px;
+	overflow: hidden;
+	}
+
+#dwn4 a { border: none; text-decoration: none; color: #000; }
+#dwn4 a * { border: none; }
+#dwn4 img { float: left; clear: left; margin-right: 4px; }
+#dwn4 div {
+	font-family: ocr,Courier New, Monospace;
+	font-size: 8pt;
+	color: #000;
+	
+	}
+
+#prmenu {
+	position: absolute;
+	padding: 8px;
+	left: 0px;
+	top: 0px;
+	text-align: center;
+	}
+	
+#prmenu div { height: 2.2em; margin-right: 10px; margin-left: 10px; float: left; }
+#prmenu div a { font-size: 2em; line-height: 2.2em; color: #048; text-decoration: none; font-family: ocr; }
+#prmenu div a:before { content: "< "; color: #480; }
+#prmenu div a:after { content: " >"; color: #480; }
+#prmenu div a:hover { color: #48f; }
+
+#infoiaten {
+	position: absolute;
+	left: 0px;
+	bottom: 2px;
+	width: 100%;
+	height: 24px;
+	overflow: hidden;
+	text-align: center;
+	}
+	
+#infoiaten a {
+	color: #804;
+	font-family: ocr, Courer New, Monospace;
+	font-size: 10pt;
+	font-weight: bold;
+	text-decoration: none;
+	}
+
+.googlerindexer {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width:	1px;
+	height: 1px;
+	overflow: hidden;
+	display: none;
+	}
+
+#sottospiega {
+	position: absolute;
+	left: 37%;
+	bottom: 48px;
+	width: 25%;
+	max-height: 25%;
+	font-family: Verdana;
+	color: #048;
+	font-size: 8pt;
+	text-align: center;
+	overflow: hidden;
+	font-weight: normal;
+	}
+
+.dwnTXT {
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 0px 10px 10px 0px;
+	width: 168px;
+	}
+
+
+</style>
+</head>
+<body onload="Start()" onresize="Resize()">
+<div id="mainc">
+<div class="googlerindexer"><h1>OnionMail</h1><br><h1>Onion Mail</h1><br>
+<h2>Encrypted mail Tor server hidden service.</h2><br>
+<div><a href="/cose.html">Cos&#039;è</a></div><div><a href="/man_index_it.html">Guida</a></div><div><a href="/download.html">Download</a></div><div><a href="/manifesto.html">Manifesto</a></div><div><a href="/news.html">News</a></div><div><a href="/contatti.html">Contatti</a></div><div><a href="/ntu.html">NTU</a></div><div><a href="/directory.html">Servers</a></div><img src="/img/OM-BL.gif" alt="OnionMail">
+</div>
+
+<div id="animain">
+	<div id="cloudu">
+		<div id="cieu"><img src="img/CIEU.png" alt="" id="cieux"></div>
+		<div id="mrku">&nbsp;</div>
+		</div>
+	<div id="skyline">-</div>
+	<div id="cloudd">
+		<div id="cied"><img src="img/CIED.png" alt="" id="ciedx"></div>
+		<div id="mrkd">&nbsp;</div>
+		</div>
+	<div id="logoc"><img src="img/OM-BL.gif" alt="OnionMail" id="logocx"></div> 
+</div>
+
+<div id="pwb">
+	<a href="http://mes3hacklab.org" target="www"><img src="img/M3HL.gif" alt="Mes3HackLab"></a>
+	<a href="http://tramaci.org" target="www"><img src="img/TRM110.gif" alt="Tramaci.Org"></a>
+	</div>
+
+<div id="dwn">
+		<a href="/download.html"><img src="/img/down.png" alt="" title="Activate a new OnionMail server."></a>
+		<div class="dwnTXT">
+		<a href="/download.html"><b>Download</b></a><br>
+		<a href="/download.html">Ver. 1.9.3.1910B</a><br>
+		<span>apt-get install onionmail</span>
+		</div>
+	</div>
+	
+<div id="dwn2">
+		<a href="/directory.html"><img src="/img/signup.png" alt="" title="Create your new mail in TOR network."></a>
+		<div class="dwnTXT">
+		<a href="/directory.html"><b>Sign UP</b></a><br>
+		<a href="/directory.html">Your new Mail</a><br>
+		<span>We are 64876 users.</span>
+		</div>
+	</div>
+
+<div id="dwn3" style="width: 420px;">
+		<a href="bitcoin:1HoNTgxzdkHDAeu1iXrc2rUguMJGY2VD7?message=ONM" target="_blank"><img src="/img/BTC.png" alt="" title="Bitcoin."></a>
+		<div class="dwnTXT" style="width: 420px;">
+		<a href="bitcoin:1HoNTgxzdkHDAeu1iXrc2rUguMJGY2VD7?message=ONM" target="_blank"><b>Donate</b></a><br>
+		<a href="bitcoin:1HoNTgxzdkHDAeu1iXrc2rUguMJGY2VD7?message=ONM" style="font-size: 9px;">1HoNTgxzdkHDAeu1iXrc2rUguMJGY2VD7</a>
+		</div>
+	</div>	
+
+<div id="dwn4" style="visibility: hidden;">
+		<a href="https://it-it.facebook.com/onionmail" target="_blank"><img src="/img/Facebook_icon.png" alt="" title="Follow us on Facebook."></a>
+		<div class="dwnTXT">
+		<a href="https://it-it.facebook.com/onionmail" target="_blank"><b>Follow us</b></a><br>
+		<a href="https://it-it.facebook.com/onionmail" target="_blank">on Facebook</a>
+		</div>
+	</div>
+
+	
+<div id="prmenu">
+<div><a href="/cose.html">Cos&#039;è</a></div><div><a href="/man_index_it.html">Guida</a></div><div><a href="/download.html">Download</a></div><div><a href="/manifesto.html">Manifesto</a></div><div><a href="/news.html">News</a></div><div><a href="/contatti.html">Contatti</a></div><div><a href="/ntu.html">NTU</a></div><div><a href="/directory.html">Servers</a></div><div class="cli"></div>
+</div>
+<div id="sottospiega" onclick="location.href='/cose.html';" style="cursor: pointer;">
+<div id="sottoSize">
+	OnionMail è un server di posta criptato ed anonimo fatto per funzionare tramite la rete TOR senza perdere la possibilità di comunicare con internet.<br>
+	Questo tipo di server garantisce una maggiore privacy per gli utenti e protegge anche dalle intercettazioni del NSA e da altre minacce. <a href="/cose.html">...</a> 
+	</div>
+</div>
+<div style="width: 1px; height: 1px; overflow: hidden;">
+<!-- Inizio Codice ShinyStat -->
+<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=onionmailx3c8"></script>
+<noscript>
+<a href="http://www.shinystat.com/it" target="_top">
+<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=onionmailx3c8" alt="Contatore per sito" border="0" /></a>
+</noscript>
+<!-- Fine Codice ShinyStat -->
+</div>
+<div style="position: absolute; right: 4px; top: 4px; with: 64px; height: 36px; overflow: hidden;">
+<a href="http://en.louhlbgyupgktsw7.onion/" data-rmh="0"><img src="/img/eng2.png" alt="ENG" style="width: 32px; border: none; margin: 2px;"></a>
+<a href="http://it.louhlbgyupgktsw7.onion/" data-rmh="0"><img src="/img/ita2.png" alt="ITA" style="width: 32px; border: none; margin: 2px;"></a>
+</div>
+</div>
+<!-- </div> -->
+
+</body>
+</html>

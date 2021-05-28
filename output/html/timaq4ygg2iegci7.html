@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>txtorcon &#8212; timaq4ygg2iegci7.onion: txtorcon documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '20.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction" href="introduction.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+  <link href='_static/pygments.css.html' rel='stylesheet' type='text/css'>
+
+  </head>
+  <body role="document">
+
+<p class="logo">
+  <a href="#">
+    <img class="logo" src="_static/logo.svg" alt="Logo"/>
+    
+<!--    <h1 class="logo logo-name">txtorcon</h2> -->
+    
+  </a>
+</p>
+
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">txtorcon docs</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="txtorcon">
+<h1>txtorcon<a class="headerlink" href="#txtorcon" title="Permalink to this headline">Â¶</a></h1>
+<ul>
+<li><dl class="first docutils">
+<dt><strong>docs</strong>:</dt>
+<dd><ul class="first last simple">
+<li>v3 onion: <a class="reference external" href="http://fjblvrw2jrxnhtg67qpbzi45r7ofojaoo3orzykesly2j3c2m3htapid.onion/">http://fjblvrw2jrxnhtg67qpbzi45r7ofojaoo3orzykesly2j3c2m3htapid.onion/</a></li>
+<li>v2 onion: <a class="reference external" href="http://timaq4ygg2iegci7.onion">http://timaq4ygg2iegci7.onion</a></li>
+<li>clearnet: <a class="reference external" href="https://txtorcon.readthedocs.org">https://txtorcon.readthedocs.org</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>code</strong>: <a class="reference external" href="https://github.com/meejah/txtorcon">https://github.com/meejah/txtorcon</a></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">torsocks</span> <span class="pre">git</span> <span class="pre">clone</span> <span class="pre">git://timaq4ygg2iegci7.onion/txtorcon.git</span></code></p>
+</li>
+<li><a class="first reference external image-reference" href="https://www.travis-ci.org/meejah/txtorcon"><img alt="https://travis-ci.org/meejah/txtorcon.png?branch=master" src="https://travis-ci.org/meejah/txtorcon.png?branch=master" /></a>
+<a class="reference external image-reference" href="https://coveralls.io/r/meejah/txtorcon"><img alt="https://coveralls.io/repos/meejah/txtorcon/badge.svg" src="https://coveralls.io/repos/meejah/txtorcon/badge.svg" /></a>
+<a class="reference external image-reference" href="https://codecov.io/github/meejah/txtorcon?branch=master"><img alt="https://codecov.io/gh/meejah/txtorcon/branch/master/graphs/badge.svg?branch=master" src="https://codecov.io/gh/meejah/txtorcon/branch/master/graphs/badge.svg?branch=master" /></a>
+<a class="reference external image-reference" href="https://txtorcon.readthedocs.io/en/stable"><img alt="ReadTheDocs" src="https://readthedocs.org/projects/txtorcon/badge/?version=stable" /></a>
+<a class="reference external image-reference" href="https://txtorcon.readthedocs.io/en/latest"><img alt="ReadTheDocs" src="https://readthedocs.org/projects/txtorcon/badge/?version=latest" /></a>
+<a class="reference external image-reference" href="https://landscape.io/github/meejah/txtorcon/master"><img alt="Code Health" src="https://landscape.io/github/meejah/txtorcon/master/landscape.svg?style=flat" /></a>
+</li>
+</ul>
+<div class="first-time docutils container">
+If this is your first time exploring txtorcon, please <strong>look at the</strong>
+<a class="reference internal" href="introduction.html#introduction"><span class="std std-ref">Introduction</span></a> <strong>first</strong>. These docs are for version 20.0.0.</div>
+<p>Supported and tested platforms: Python 3.5+, PyPy 5.0.0+, Python 2.7+ (deprecated)
+using Twisted 15.5.0+, 16.3.0+, or 17.1.0+ (see <a class="reference external" href="https://travis-ci.org/meejah/txtorcon">travis</a>).</p>
+<p><strong>Asycnio inter-operation</strong> is now possible, see <a class="reference internal" href="interop_asyncio.html#interop-asyncio"><span class="std std-ref">Using Asyncio Libraries with txtorcon</span></a></p>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">Â¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#features-overview">Features Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#shell-cast-overview">Shell-cast Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#example-code">Example Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#known-users">Known Users</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Installing txtorcon</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installing.html#latest-release">Latest Release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installing.html#compatibility">Compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installing.html#tor-configuration">Tor Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installing.html#source-code">Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installing.html#development-environment">Development Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installing.html#integration-tests">Integration Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installing.html#dependencies-requirements">Dependencies / Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide.html">Programming Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guide.html#api-stability">API Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide.html#high-level-overview">High Level Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide.html#a-tor-instance">A Tor Instance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guide.html#connecting-to-a-running-tor">Connecting to a Running Tor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide.html#launching-a-new-tor">Launching a New Tor</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guide.html#a-note-on-style">A Note On Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide.html#tracking-and-changing-tor-s-configuration">Tracking and Changing Tor&#8217;s Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide.html#monitor-and-change-tor-s-state">Monitor and Change Tor&#8217;s State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide.html#making-connections-over-tor">Making Connections Over Tor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guide.html#socks5">SOCKS5</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guide.html#onion-hidden-services">Onion (Hidden) Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guide.html#onion-services-endpoints-api">Onion Services Endpoints API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide.html#creating-onion-endpoints">Creating Onion Endpoints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide.html#non-authenticated-services">Non-Authenticated Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide.html#authenticated-services">Authenticated Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide.html#onion-service-configuration">Onion Service Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guide.html#custom-circuits">Custom Circuits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guide.html#high-level">High Level</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide.html#low-level">Low Level</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="guide.html#building-your-own-circuits">Building Your Own Circuits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guide.html#building-a-single-circuit">Building a Single Circuit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guide.html#building-many-circuits">Building Many Circuits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#web-clients">Web: clients</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples.html#web-client-py"><code class="docutils literal"><span class="pre">web_client.py</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples.html#web-client-treq-py"><code class="docutils literal"><span class="pre">web_client_treq.py</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples.html#web-client-custom-circuit-py"><code class="docutils literal"><span class="pre">web_client_custom_circuit.py</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#starting-tor">Starting Tor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples.html#launch-tor-py"><code class="file docutils literal"><span class="pre">launch_tor.py</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples.html#launch-tor-endpoint-py"><code class="file docutils literal"><span class="pre">launch_tor_endpoint.py</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#circuits-and-streams">Circuits and Streams</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples.html#disallow-streams-by-port-py"><code class="file docutils literal"><span class="pre">disallow_streams_by_port.py</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples.html#stream-circuit-logger-py"><code class="file docutils literal"><span class="pre">stream_circuit_logger.py</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#events">Events</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples.html#monitor-py"><code class="file docutils literal"><span class="pre">monitor.py</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#miscellaneous">Miscellaneous</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples.html#stem-relay-descriptor-py"><code class="file docutils literal"><span class="pre">stem_relay_descriptor.py</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples.html#txtorcon-tac"><code class="file docutils literal"><span class="pre">txtorcon.tac</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="interop_asyncio.html">Using Asyncio Libraries with txtorcon</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="interop_asyncio.html#web-onion-service-aiohttp-py"><code class="docutils literal"><span class="pre">web_onion_service_aiohttp.py</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hacking.html">Contributions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hacking.html#contact-information">Contact Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hacking.html#public-key">Public Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hacking.html#pull-requests">Pull Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hacking.html#making-a-release">Making a Release</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release-checklist.html">Release Checklist</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="official-releases">
+<h2>Official Releases:<a class="headerlink" href="#official-releases" title="Permalink to this headline">Â¶</a></h2>
+<p>All official releases are tagged in Git, and signed by my key. All official releases on PyPI have a corresponding GPG signature of the build. Please be aware that <code class="docutils literal"><span class="pre">pip</span></code> does <em>not</em> check GPG signatures by default; please see <a class="reference external" href="https://github.com/pypa/pip/issues/1035">this ticket</a> if you care.</p>
+<p>The most reliable way to verify you got what I intended is to clone the Git repository, <code class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span></code> a tag and verify its signature. The second-best would be to download a release + tag from PyPI and verify that.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v20-0-0">v20.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v19-1-0">v19.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v19-0-0">v19.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v18-3-0">v18.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v18-2-0">v18.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v18-1-0">v18.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v18-0-2">v18.0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v18-0-1">v18.0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v18-0-0">v18.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-20-0">v0.20.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-19-3">v0.19.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-19-2">v0.19.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-19-1">v0.19.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-19-0">v0.19.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-18-0">v0.18.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-17-0">v0.17.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-16-1">v0.16.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-16-0">v0.16.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-15-1">v0.15.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-15-0">v0.15.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-14-2">v0.14.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-14-1">v0.14.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-14-0">v0.14.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-13-0">v0.13.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-12-0">v0.12.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-11-0">v0.11.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-10-1">v0.10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-10-0">v0.10.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-9-2">v0.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-9-1">v0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-8-2">v0.8.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-8-1">v0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-8-0">v0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-7">v0.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-6">v0.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-5">v0.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-4">v0.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-3">v0.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-2">v0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases.html#v0-1">v0.1</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="api-documentation">
+<h2>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">Â¶</a></h2>
+<p>These are the lowest-level documents, directly from the doc-strings in
+the code with some minimal organization; if you&#8217;re just getting
+started with txtorcon <strong>the</strong> &#8220;<a class="reference internal" href="guide.html#programming-guide"><span class="std std-ref">Programming Guide</span></a>&#8221; <strong>is a better
+place to start</strong>.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="txtorcon.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="txtorcon-controller.html">High Level API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-controller.html#tor">Tor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-controller.html#connect">connect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-controller.html#launch">launch</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="txtorcon-state.html">Tracking and Changing Live Tor State</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-state.html#torstate">TorState</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-state.html#circuit">Circuit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-state.html#stream">Stream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-state.html#router">Router</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="txtorcon-config.html">Reading and Writing Live Tor Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-config.html#torconfig">TorConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-config.html#hiddenservice">HiddenService</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="txtorcon-endpoints.html">Endpoints and Related Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-endpoints.html#tcphiddenserviceendpoint">TCPHiddenServiceEndpoint</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-endpoints.html#tcphiddenserviceendpointparser">TCPHiddenServiceEndpointParser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-endpoints.html#toronionaddress">TorOnionAddress</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-endpoints.html#toronionlisteningport">TorOnionListeningPort</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-endpoints.html#iprogressprovider">IProgressProvider</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="txtorcon-onion.html">Onion APIs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-onion.html#ionionservice">IOnionService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-onion.html#ifilesystemonionservice">IFilesystemOnionService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-onion.html#iauthenticatedonionclients">IAuthenticatedOnionClients</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-onion.html#ionionclient">IOnionClient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-onion.html#ephemeralonionservice">EphemeralOnionService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-onion.html#ephemeralauthenticatedonionservice">EphemeralAuthenticatedOnionService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-onion.html#ephemeralauthenticatedonionserviceclient">EphemeralAuthenticatedOnionServiceClient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-onion.html#filesystemonionservice">FilesystemOnionService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-onion.html#filesystemauthenticatedonionservice">FilesystemAuthenticatedOnionService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-onion.html#filesystemauthenticatedonionserviceclient">FilesystemAuthenticatedOnionServiceClient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-onion.html#authbasic">AuthBasic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-onion.html#authstealth">AuthStealth</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="txtorcon-protocol.html">Low-Level Protocol Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-protocol.html#build-tor-connection">build_tor_connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-protocol.html#build-local-tor-connection">build_local_tor_connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-protocol.html#torcontrolprotocol">TorControlProtocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-protocol.html#torprotocolfactory">TorProtocolFactory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-protocol.html#torprocessprotocol">TorProcessProtocol</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="txtorcon-socks.html"><code class="docutils literal"><span class="pre">txtorcon.socks</span></code> Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-socks.html#socks5-errors">SOCKS5 Errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-socks.html#resolve">resolve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-socks.html#resolve-ptr">resolve_ptr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-socks.html#torsocksendpoint">TorSocksEndpoint</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="txtorcon-interface.html"><code class="docutils literal"><span class="pre">txtorcon.interface</span></code> Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-interface.html#interface-istreamattacher">interface.IStreamAttacher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-interface.html#interface-istreamlistener">interface.IStreamListener</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-interface.html#interface-icircuitlistener">interface.ICircuitListener</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-interface.html#interface-icircuitcontainer">interface.ICircuitContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-interface.html#interface-iroutercontainer">interface.IRouterContainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-interface.html#interface-itorcontrolprotocol">interface.ITorControlProtocol</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="txtorcon-util.html"><code class="docutils literal"><span class="pre">txtorcon.util</span></code> Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-util.html#util-netlocation">util.NetLocation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-util.html#util-process-from-address">util.process_from_address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="txtorcon-util.html#util-delete-file-or-tree">util.delete_file_or_tree</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">Â¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="#">
+    <img class="logo" src="_static/logo.svg" alt="Logo"/>
+    
+    <h1 class="logo logo-name">txtorcon</h2>
+    
+  </a>
+</p>
+
+
+
+<p class="blurb">Control Tor from Twisted</p>
+
+
+
+
+<p class="badges">
+
+
+    
+
+<a href="https://travis-ci.org/meejah/txtorcon">
+    <img
+        alt="https://secure.travis-ci.org/meejah/txtorcon.png?branch=master"
+        src="https://secure.travis-ci.org/meejah/txtorcon.png?branch=master"
+    >
+</a>
+
+
+
+
+    
+
+<a href="https://coveralls.io/r/meejah/txtorcon">
+    <img alt="code coverage"
+	 src="https://coveralls.io/repos/meejah/txtorcon/badge.png"
+    >
+</a>
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Installing txtorcon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide.html">Programming Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interop_asyncio.html">Using Asyncio Libraries with txtorcon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hacking.html">Contributions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="releases.html">Releases</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="txtorcon.html">API Documentation</a></li>
+</ul>
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2012, meejah@meejah.ca.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.6.0</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

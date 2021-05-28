@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>
+        BitLaundry - For all your Bitcoin washing needs!
+    </title>
+<meta name="description" content="Bitcoin washing" />
+<meta name="keywords" content="bitcoin,blender,mixer,laundry,btc,anonymous,Wallet,mix,deposit,withdraw,cleaning,washing" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/960.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/sitewide.css" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+<div id="header" class="container_12">
+    <div id="title" class="grid_6">
+        <a href="/">BitLaundry</a> - For all your Bitcoin washing needs.
+    </div>
+    <div class="grid_5" id="about">
+        <span><a href="about.php">How it works</a></span>
+    </div><!--
+		<div class="grid_3" id="purge">
+			<span><a href="/delete.php">Purge records</a></span>
+		</div>-->
+</div>
+<div id="maincontent" class="container_12">
+<div id="leftside" class="grid_6">
+    <!-- TODO: Javascript input validation: at least one address, values as ints > 1 -->
+    <p style="text-align: center;"><strong>WARNING</strong>: Please check the address of this page in your browser. It should start with loundryyz7a2og5yfbsyqjoqs45aywjeils5le4h25zwz6vytzoezgid.onion</p>
+    <div id="jobcard">
+        <!--<h2>Closed for maintenance. We'll be back in a day or so. Existing payments will continue to go out.</h2>-->
+        <p>Note: Schemes that are not paid within 2 hours of creation will be automatically deleted, and Bitcoins sent to their addresses <strong>forfeited</strong>.</p>
+        <p>Note:<br>The minimum input to a scheme is $150=&#3647;0.00386. If you send less to your scheme's address, those Bitcoins will be <strong>forfeited</strong>.</p>
+
+        <form action="/schedule.php" method="post">
+            <div id="jobcardtitle">Enter Bitcoin destination addresses below</div>
+            <div><textarea id="btcaddressarea" name="recipients" cols="40" rows="8"></textarea></div>
+            <p style="text-align: center;">
+                Spread payments over <input type="number" name="num_days" value="1" size="2" min="1" max="10" step="1" pattern="[0-9]{1,2}" style="width: 40px" /> day(s),<br />
+                with <input type="number" name="tx_per_day" value="1" size="2" min="1" max="10" step="1" pattern="[0-9]{,2}" style="width: 40px" /> transaction(s) per recipient per day<br />
+                <span style="font-size: 80%;">Max. 10 days, max. 10 transactions per day</span></p>
+            <p style="text-align: center;"><input type="submit" value="Confirm and review fees" /></p>
+        </form>
+
+    </div>
+</div>
+<div id="sidebar" class="grid_5">
+    
+    <h2>Tips</h2>
+    <p>Send Bitcoins to yourself to obscure their history.</p>
+    <p>Use multiple recipient addresses and/or spread the transactions over a number of days to thwart correlation attacks!</p>
+    <h2>Fees</h2>
+    <p>
+        <strong>0.05%</strong> of the total you send, plus <strong>BTC&nbsp;0.0001</strong> per outgoing transaction
+    </p>
+    <p>
+        Example: Let's distribute &#3647;1 to 7&nbsp;recipients over 3&nbsp;days with 2&nbsp;transactions per recipient per day:<br />
+        <br />
+        The base fee:<br />
+        &#3647;1 * 0.005 = &#3647;0.005<br />
+        <br />
+        plus the transaction fee:<br />
+        7 * 3 * 2 * 0.0001 = &#3647;0.0042<br />
+        <br />
+        Total fees: &#3647;0.0092<br />
+        <br />
+        &#3647;0.9908 would be sent to the recipient addresses.<br />
+        <br />
+        Note: If you send less than or equal to the total fee for the scheme you've set up to your one-time address, we'll just keep your Bitcoins! Please note the details carefully.
+    </p>
+    </div>
+</div>
+<div class="clear"></div>
+<div id="footer" class="container_12" style="text-align: center;">
+    BitLaundry &copy; All Rights Reserved. <br />
+      | Donate: 3NbUpDb687rfEmXaBpDTf7taEnHyh2SxnH
+</div>
+</body>
+</html>
